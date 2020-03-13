@@ -1,1 +1,7 @@
-<span class="app-title">{{ title }} app is running!</span>
+<mat-sidenav-container style="height:100vh">
+  <mat-grid-list class="grid-list" cols="6" rowHeight="fit" gutterSize="20">
+      <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list>
+</mat-sidenav-container>

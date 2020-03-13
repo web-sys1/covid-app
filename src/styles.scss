@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+mat-grid-tile {
+  background-color: var(--color-accent);
+  border-radius: 8px;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+  background-color:#111111!important;
+}

@@ -1,0 +1,7 @@
+{
+    "/web": {
+      "target": "https://www.gov.pl",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }

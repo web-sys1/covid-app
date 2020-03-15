@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { DataBackendService } from './data-backend.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { DataService } from './data.service';
     AngularMaterialModule,
     HttpClientModule,
   ],
-  providers: [DataService],
+  providers: [DataService, DataBackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

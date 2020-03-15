@@ -1,0 +1,2282 @@
+[
+    {
+        "id": 1,
+        "terytCode": "0201",
+        "name": "bolesławiecki",
+        "parentId": 1
+    },
+    {
+        "id": 2,
+        "terytCode": "0202",
+        "name": "dzierżoniowski",
+        "parentId": 1
+    },
+    {
+        "id": 3,
+        "terytCode": "0203",
+        "name": "głogowski",
+        "parentId": 1
+    },
+    {
+        "id": 4,
+        "terytCode": "0204",
+        "name": "górowski",
+        "parentId": 1
+    },
+    {
+        "id": 5,
+        "terytCode": "0205",
+        "name": "jaworski",
+        "parentId": 1
+    },
+    {
+        "id": 6,
+        "terytCode": "0206",
+        "name": "jeleniogórski",
+        "parentId": 1
+    },
+    {
+        "id": 7,
+        "terytCode": "0207",
+        "name": "kamiennogórski",
+        "parentId": 1
+    },
+    {
+        "id": 8,
+        "terytCode": "0208",
+        "name": "kłodzki",
+        "parentId": 1
+    },
+    {
+        "id": 9,
+        "terytCode": "0209",
+        "name": "legnicki",
+        "parentId": 1
+    },
+    {
+        "id": 10,
+        "terytCode": "0210",
+        "name": "lubański",
+        "parentId": 1
+    },
+    {
+        "id": 11,
+        "terytCode": "0211",
+        "name": "lubiński",
+        "parentId": 1
+    },
+    {
+        "id": 12,
+        "terytCode": "0212",
+        "name": "lwówecki",
+        "parentId": 1
+    },
+    {
+        "id": 13,
+        "terytCode": "0213",
+        "name": "milicki",
+        "parentId": 1
+    },
+    {
+        "id": 14,
+        "terytCode": "0214",
+        "name": "oleśnicki",
+        "parentId": 1
+    },
+    {
+        "id": 15,
+        "terytCode": "0215",
+        "name": "oławski",
+        "parentId": 1
+    },
+    {
+        "id": 16,
+        "terytCode": "0216",
+        "name": "polkowicki",
+        "parentId": 1
+    },
+    {
+        "id": 17,
+        "terytCode": "0217",
+        "name": "strzeliński",
+        "parentId": 1
+    },
+    {
+        "id": 18,
+        "terytCode": "0218",
+        "name": "średzki",
+        "parentId": 1
+    },
+    {
+        "id": 19,
+        "terytCode": "0219",
+        "name": "świdnicki",
+        "parentId": 1
+    },
+    {
+        "id": 20,
+        "terytCode": "0220",
+        "name": "trzebnicki",
+        "parentId": 1
+    },
+    {
+        "id": 21,
+        "terytCode": "0221",
+        "name": "wałbrzyski",
+        "parentId": 1
+    },
+    {
+        "id": 22,
+        "terytCode": "0222",
+        "name": "wołowski",
+        "parentId": 1
+    },
+    {
+        "id": 23,
+        "terytCode": "0223",
+        "name": "wrocławski",
+        "parentId": 1
+    },
+    {
+        "id": 24,
+        "terytCode": "0224",
+        "name": "ząbkowicki",
+        "parentId": 1
+    },
+    {
+        "id": 25,
+        "terytCode": "0225",
+        "name": "zgorzelecki",
+        "parentId": 1
+    },
+    {
+        "id": 26,
+        "terytCode": "0226",
+        "name": "złotoryjski",
+        "parentId": 1
+    },
+    {
+        "id": 27,
+        "terytCode": "0261",
+        "name": "Jelenia Góra",
+        "parentId": 1
+    },
+    {
+        "id": 28,
+        "terytCode": "0262",
+        "name": "Legnica",
+        "parentId": 1
+    },
+    {
+        "id": 29,
+        "terytCode": "0264",
+        "name": "Wrocław",
+        "parentId": 1
+    },
+    {
+        "id": 30,
+        "terytCode": "0401",
+        "name": "aleksandrowski",
+        "parentId": 2
+    },
+    {
+        "id": 31,
+        "terytCode": "0402",
+        "name": "brodnicki",
+        "parentId": 2
+    },
+    {
+        "id": 32,
+        "terytCode": "0403",
+        "name": "bydgoski",
+        "parentId": 2
+    },
+    {
+        "id": 33,
+        "terytCode": "0404",
+        "name": "chełmiński",
+        "parentId": 2
+    },
+    {
+        "id": 34,
+        "terytCode": "0405",
+        "name": "golubsko-dobrzyński",
+        "parentId": 2
+    },
+    {
+        "id": 35,
+        "terytCode": "0406",
+        "name": "grudziądzki",
+        "parentId": 2
+    },
+    {
+        "id": 36,
+        "terytCode": "0407",
+        "name": "inowrocławski",
+        "parentId": 2
+    },
+    {
+        "id": 37,
+        "terytCode": "0408",
+        "name": "lipnowski",
+        "parentId": 2
+    },
+    {
+        "id": 38,
+        "terytCode": "0409",
+        "name": "mogileński",
+        "parentId": 2
+    },
+    {
+        "id": 39,
+        "terytCode": "0410",
+        "name": "nakielski",
+        "parentId": 2
+    },
+    {
+        "id": 40,
+        "terytCode": "0411",
+        "name": "radziejowski",
+        "parentId": 2
+    },
+    {
+        "id": 41,
+        "terytCode": "0412",
+        "name": "rypiński",
+        "parentId": 2
+    },
+    {
+        "id": 42,
+        "terytCode": "0413",
+        "name": "sępoleński",
+        "parentId": 2
+    },
+    {
+        "id": 43,
+        "terytCode": "0414",
+        "name": "świecki",
+        "parentId": 2
+    },
+    {
+        "id": 44,
+        "terytCode": "0415",
+        "name": "toruński",
+        "parentId": 2
+    },
+    {
+        "id": 45,
+        "terytCode": "0416",
+        "name": "tucholski",
+        "parentId": 2
+    },
+    {
+        "id": 46,
+        "terytCode": "0417",
+        "name": "wąbrzeski",
+        "parentId": 2
+    },
+    {
+        "id": 47,
+        "terytCode": "0418",
+        "name": "włocławski",
+        "parentId": 2
+    },
+    {
+        "id": 48,
+        "terytCode": "0419",
+        "name": "żniński",
+        "parentId": 2
+    },
+    {
+        "id": 49,
+        "terytCode": "0461",
+        "name": "Bydgoszcz",
+        "parentId": 2
+    },
+    {
+        "id": 50,
+        "terytCode": "0462",
+        "name": "Grudziądz",
+        "parentId": 2
+    },
+    {
+        "id": 51,
+        "terytCode": "0463",
+        "name": "Toruń",
+        "parentId": 2
+    },
+    {
+        "id": 52,
+        "terytCode": "0464",
+        "name": "Włocławek",
+        "parentId": 2
+    },
+    {
+        "id": 53,
+        "terytCode": "0601",
+        "name": "bialski",
+        "parentId": 3
+    },
+    {
+        "id": 54,
+        "terytCode": "0602",
+        "name": "biłgorajski",
+        "parentId": 3
+    },
+    {
+        "id": 55,
+        "terytCode": "0603",
+        "name": "chełmski",
+        "parentId": 3
+    },
+    {
+        "id": 56,
+        "terytCode": "0604",
+        "name": "hrubieszowski",
+        "parentId": 3
+    },
+    {
+        "id": 57,
+        "terytCode": "0605",
+        "name": "janowski",
+        "parentId": 3
+    },
+    {
+        "id": 58,
+        "terytCode": "0606",
+        "name": "krasnostawski",
+        "parentId": 3
+    },
+    {
+        "id": 59,
+        "terytCode": "0607",
+        "name": "kraśnicki",
+        "parentId": 3
+    },
+    {
+        "id": 60,
+        "terytCode": "0608",
+        "name": "lubartowski",
+        "parentId": 3
+    },
+    {
+        "id": 61,
+        "terytCode": "0609",
+        "name": "lubelski",
+        "parentId": 3
+    },
+    {
+        "id": 62,
+        "terytCode": "0610",
+        "name": "łęczyński",
+        "parentId": 3
+    },
+    {
+        "id": 63,
+        "terytCode": "0611",
+        "name": "łukowski",
+        "parentId": 3
+    },
+    {
+        "id": 64,
+        "terytCode": "0612",
+        "name": "opolski",
+        "parentId": 3
+    },
+    {
+        "id": 65,
+        "terytCode": "0613",
+        "name": "parczewski",
+        "parentId": 3
+    },
+    {
+        "id": 66,
+        "terytCode": "0614",
+        "name": "puławski",
+        "parentId": 3
+    },
+    {
+        "id": 67,
+        "terytCode": "0615",
+        "name": "radzyński",
+        "parentId": 3
+    },
+    {
+        "id": 68,
+        "terytCode": "0616",
+        "name": "rycki",
+        "parentId": 3
+    },
+    {
+        "id": 69,
+        "terytCode": "0617",
+        "name": "świdnicki",
+        "parentId": 3
+    },
+    {
+        "id": 70,
+        "terytCode": "0618",
+        "name": "tomaszowski",
+        "parentId": 3
+    },
+    {
+        "id": 71,
+        "terytCode": "0619",
+        "name": "włodawski",
+        "parentId": 3
+    },
+    {
+        "id": 72,
+        "terytCode": "0620",
+        "name": "zamojski",
+        "parentId": 3
+    },
+    {
+        "id": 73,
+        "terytCode": "0661",
+        "name": "Biała Podlaska",
+        "parentId": 3
+    },
+    {
+        "id": 74,
+        "terytCode": "0662",
+        "name": "Chełm",
+        "parentId": 3
+    },
+    {
+        "id": 75,
+        "terytCode": "0663",
+        "name": "Lublin",
+        "parentId": 3
+    },
+    {
+        "id": 76,
+        "terytCode": "0664",
+        "name": "Zamość",
+        "parentId": 3
+    },
+    {
+        "id": 77,
+        "terytCode": "0801",
+        "name": "gorzowski",
+        "parentId": 4
+    },
+    {
+        "id": 78,
+        "terytCode": "0802",
+        "name": "krośnieński",
+        "parentId": 4
+    },
+    {
+        "id": 79,
+        "terytCode": "0803",
+        "name": "międzyrzecki",
+        "parentId": 4
+    },
+    {
+        "id": 80,
+        "terytCode": "0804",
+        "name": "nowosolski",
+        "parentId": 4
+    },
+    {
+        "id": 81,
+        "terytCode": "0805",
+        "name": "słubicki",
+        "parentId": 4
+    },
+    {
+        "id": 82,
+        "terytCode": "0806",
+        "name": "strzelecko-drezdenecki",
+        "parentId": 4
+    },
+    {
+        "id": 83,
+        "terytCode": "0807",
+        "name": "sulęciński",
+        "parentId": 4
+    },
+    {
+        "id": 84,
+        "terytCode": "0808",
+        "name": "świebodziński",
+        "parentId": 4
+    },
+    {
+        "id": 85,
+        "terytCode": "0809",
+        "name": "zielonogórski",
+        "parentId": 4
+    },
+    {
+        "id": 86,
+        "terytCode": "0810",
+        "name": "żagański",
+        "parentId": 4
+    },
+    {
+        "id": 87,
+        "terytCode": "0811",
+        "name": "żarski",
+        "parentId": 4
+    },
+    {
+        "id": 88,
+        "terytCode": "0812",
+        "name": "wschowski",
+        "parentId": 4
+    },
+    {
+        "id": 89,
+        "terytCode": "0861",
+        "name": "Gorzów Wielkopolski",
+        "parentId": 4
+    },
+    {
+        "id": 90,
+        "terytCode": "0862",
+        "name": "Zielona Góra",
+        "parentId": 4
+    },
+    {
+        "id": 91,
+        "terytCode": "1001",
+        "name": "bełchatowski",
+        "parentId": 5
+    },
+    {
+        "id": 92,
+        "terytCode": "1002",
+        "name": "kutnowski",
+        "parentId": 5
+    },
+    {
+        "id": 93,
+        "terytCode": "1003",
+        "name": "łaski",
+        "parentId": 5
+    },
+    {
+        "id": 94,
+        "terytCode": "1004",
+        "name": "łęczycki",
+        "parentId": 5
+    },
+    {
+        "id": 95,
+        "terytCode": "1005",
+        "name": "łowicki",
+        "parentId": 5
+    },
+    {
+        "id": 96,
+        "terytCode": "1006",
+        "name": "łódzki wschodni",
+        "parentId": 5
+    },
+    {
+        "id": 97,
+        "terytCode": "1007",
+        "name": "opoczyński",
+        "parentId": 5
+    },
+    {
+        "id": 98,
+        "terytCode": "1008",
+        "name": "pabianicki",
+        "parentId": 5
+    },
+    {
+        "id": 99,
+        "terytCode": "1009",
+        "name": "pajęczański",
+        "parentId": 5
+    },
+    {
+        "id": 100,
+        "terytCode": "1010",
+        "name": "piotrkowski",
+        "parentId": 5
+    },
+    {
+        "id": 101,
+        "terytCode": "1011",
+        "name": "poddębicki",
+        "parentId": 5
+    },
+    {
+        "id": 102,
+        "terytCode": "1012",
+        "name": "radomszczański",
+        "parentId": 5
+    },
+    {
+        "id": 103,
+        "terytCode": "1013",
+        "name": "rawski",
+        "parentId": 5
+    },
+    {
+        "id": 104,
+        "terytCode": "1014",
+        "name": "sieradzki",
+        "parentId": 5
+    },
+    {
+        "id": 105,
+        "terytCode": "1015",
+        "name": "skierniewicki",
+        "parentId": 5
+    },
+    {
+        "id": 106,
+        "terytCode": "1016",
+        "name": "tomaszowski",
+        "parentId": 5
+    },
+    {
+        "id": 107,
+        "terytCode": "1017",
+        "name": "wieluński",
+        "parentId": 5
+    },
+    {
+        "id": 108,
+        "terytCode": "1018",
+        "name": "wieruszowski",
+        "parentId": 5
+    },
+    {
+        "id": 109,
+        "terytCode": "1019",
+        "name": "zduńskowolski",
+        "parentId": 5
+    },
+    {
+        "id": 110,
+        "terytCode": "1020",
+        "name": "zgierski",
+        "parentId": 5
+    },
+    {
+        "id": 111,
+        "terytCode": "1021",
+        "name": "brzeziński",
+        "parentId": 5
+    },
+    {
+        "id": 112,
+        "terytCode": "1061",
+        "name": "Łódź",
+        "parentId": 5
+    },
+    {
+        "id": 113,
+        "terytCode": "1062",
+        "name": "Piotrków Trybunalski",
+        "parentId": 5
+    },
+    {
+        "id": 114,
+        "terytCode": "1063",
+        "name": "Skierniewice",
+        "parentId": 5
+    },
+    {
+        "id": 115,
+        "terytCode": "1201",
+        "name": "bocheński",
+        "parentId": 6
+    },
+    {
+        "id": 116,
+        "terytCode": "1202",
+        "name": "brzeski",
+        "parentId": 6
+    },
+    {
+        "id": 117,
+        "terytCode": "1203",
+        "name": "chrzanowski",
+        "parentId": 6
+    },
+    {
+        "id": 118,
+        "terytCode": "1204",
+        "name": "dąbrowski",
+        "parentId": 6
+    },
+    {
+        "id": 119,
+        "terytCode": "1205",
+        "name": "gorlicki",
+        "parentId": 6
+    },
+    {
+        "id": 120,
+        "terytCode": "1206",
+        "name": "krakowski",
+        "parentId": 6
+    },
+    {
+        "id": 121,
+        "terytCode": "1207",
+        "name": "limanowski",
+        "parentId": 6
+    },
+    {
+        "id": 122,
+        "terytCode": "1208",
+        "name": "miechowski",
+        "parentId": 6
+    },
+    {
+        "id": 123,
+        "terytCode": "1209",
+        "name": "myślenicki",
+        "parentId": 6
+    },
+    {
+        "id": 124,
+        "terytCode": "1210",
+        "name": "nowosądecki",
+        "parentId": 6
+    },
+    {
+        "id": 125,
+        "terytCode": "1211",
+        "name": "nowotarski",
+        "parentId": 6
+    },
+    {
+        "id": 126,
+        "terytCode": "1212",
+        "name": "olkuski",
+        "parentId": 6
+    },
+    {
+        "id": 127,
+        "terytCode": "1213",
+        "name": "oświęcimski",
+        "parentId": 6
+    },
+    {
+        "id": 128,
+        "terytCode": "1214",
+        "name": "proszowicki",
+        "parentId": 6
+    },
+    {
+        "id": 129,
+        "terytCode": "1215",
+        "name": "suski",
+        "parentId": 6
+    },
+    {
+        "id": 130,
+        "terytCode": "1216",
+        "name": "tarnowski",
+        "parentId": 6
+    },
+    {
+        "id": 131,
+        "terytCode": "1217",
+        "name": "tatrzański",
+        "parentId": 6
+    },
+    {
+        "id": 132,
+        "terytCode": "1218",
+        "name": "wadowicki",
+        "parentId": 6
+    },
+    {
+        "id": 133,
+        "terytCode": "1219",
+        "name": "wielicki",
+        "parentId": 6
+    },
+    {
+        "id": 134,
+        "terytCode": "1261",
+        "name": "Kraków",
+        "parentId": 6
+    },
+    {
+        "id": 135,
+        "terytCode": "1262",
+        "name": "Nowy Sącz",
+        "parentId": 6
+    },
+    {
+        "id": 136,
+        "terytCode": "1263",
+        "name": "Tarnów",
+        "parentId": 6
+    },
+    {
+        "id": 137,
+        "terytCode": "1401",
+        "name": "białobrzeski",
+        "parentId": 7
+    },
+    {
+        "id": 138,
+        "terytCode": "1402",
+        "name": "ciechanowski",
+        "parentId": 7
+    },
+    {
+        "id": 139,
+        "terytCode": "1403",
+        "name": "garwoliński",
+        "parentId": 7
+    },
+    {
+        "id": 140,
+        "terytCode": "1404",
+        "name": "gostyniński",
+        "parentId": 7
+    },
+    {
+        "id": 141,
+        "terytCode": "1405",
+        "name": "grodziski",
+        "parentId": 7
+    },
+    {
+        "id": 142,
+        "terytCode": "1406",
+        "name": "grójecki",
+        "parentId": 7
+    },
+    {
+        "id": 143,
+        "terytCode": "1407",
+        "name": "kozienicki",
+        "parentId": 7
+    },
+    {
+        "id": 144,
+        "terytCode": "1408",
+        "name": "legionowski",
+        "parentId": 7
+    },
+    {
+        "id": 145,
+        "terytCode": "1409",
+        "name": "lipski",
+        "parentId": 7
+    },
+    {
+        "id": 146,
+        "terytCode": "1410",
+        "name": "łosicki",
+        "parentId": 7
+    },
+    {
+        "id": 147,
+        "terytCode": "1411",
+        "name": "makowski",
+        "parentId": 7
+    },
+    {
+        "id": 148,
+        "terytCode": "1412",
+        "name": "miński",
+        "parentId": 7
+    },
+    {
+        "id": 149,
+        "terytCode": "1413",
+        "name": "mławski",
+        "parentId": 7
+    },
+    {
+        "id": 150,
+        "terytCode": "1414",
+        "name": "nowodworski",
+        "parentId": 7
+    },
+    {
+        "id": 151,
+        "terytCode": "1415",
+        "name": "ostrołęcki",
+        "parentId": 7
+    },
+    {
+        "id": 152,
+        "terytCode": "1416",
+        "name": "ostrowski",
+        "parentId": 7
+    },
+    {
+        "id": 153,
+        "terytCode": "1417",
+        "name": "otwocki",
+        "parentId": 7
+    },
+    {
+        "id": 154,
+        "terytCode": "1418",
+        "name": "piaseczyński",
+        "parentId": 7
+    },
+    {
+        "id": 155,
+        "terytCode": "1419",
+        "name": "płocki",
+        "parentId": 7
+    },
+    {
+        "id": 156,
+        "terytCode": "1420",
+        "name": "płoński",
+        "parentId": 7
+    },
+    {
+        "id": 157,
+        "terytCode": "1421",
+        "name": "pruszkowski",
+        "parentId": 7
+    },
+    {
+        "id": 158,
+        "terytCode": "1422",
+        "name": "przasnyski",
+        "parentId": 7
+    },
+    {
+        "id": 159,
+        "terytCode": "1423",
+        "name": "przysuski",
+        "parentId": 7
+    },
+    {
+        "id": 160,
+        "terytCode": "1424",
+        "name": "pułtuski",
+        "parentId": 7
+    },
+    {
+        "id": 161,
+        "terytCode": "1425",
+        "name": "radomski",
+        "parentId": 7
+    },
+    {
+        "id": 162,
+        "terytCode": "1426",
+        "name": "siedlecki",
+        "parentId": 7
+    },
+    {
+        "id": 163,
+        "terytCode": "1427",
+        "name": "sierpecki",
+        "parentId": 7
+    },
+    {
+        "id": 164,
+        "terytCode": "1428",
+        "name": "sochaczewski",
+        "parentId": 7
+    },
+    {
+        "id": 165,
+        "terytCode": "1429",
+        "name": "sokołowski",
+        "parentId": 7
+    },
+    {
+        "id": 166,
+        "terytCode": "1430",
+        "name": "szydłowiecki",
+        "parentId": 7
+    },
+    {
+        "id": 167,
+        "terytCode": "1432",
+        "name": "warszawski zachodni",
+        "parentId": 7
+    },
+    {
+        "id": 168,
+        "terytCode": "1433",
+        "name": "węgrowski",
+        "parentId": 7
+    },
+    {
+        "id": 169,
+        "terytCode": "1434",
+        "name": "wołomiński",
+        "parentId": 7
+    },
+    {
+        "id": 170,
+        "terytCode": "1435",
+        "name": "wyszkowski",
+        "parentId": 7
+    },
+    {
+        "id": 171,
+        "terytCode": "1436",
+        "name": "zwoleński",
+        "parentId": 7
+    },
+    {
+        "id": 172,
+        "terytCode": "1437",
+        "name": "żuromiński",
+        "parentId": 7
+    },
+    {
+        "id": 173,
+        "terytCode": "1438",
+        "name": "żyrardowski",
+        "parentId": 7
+    },
+    {
+        "id": 174,
+        "terytCode": "1461",
+        "name": "Ostrołęka",
+        "parentId": 7
+    },
+    {
+        "id": 175,
+        "terytCode": "1462",
+        "name": "Płock",
+        "parentId": 7
+    },
+    {
+        "id": 176,
+        "terytCode": "1463",
+        "name": "Radom",
+        "parentId": 7
+    },
+    {
+        "id": 177,
+        "terytCode": "1464",
+        "name": "Siedlce",
+        "parentId": 7
+    },
+    {
+        "id": 178,
+        "terytCode": "1465",
+        "name": "Warszawa",
+        "parentId": 7
+    },
+    {
+        "id": 179,
+        "terytCode": "1601",
+        "name": "brzeski",
+        "parentId": 8
+    },
+    {
+        "id": 180,
+        "terytCode": "1602",
+        "name": "głubczycki",
+        "parentId": 8
+    },
+    {
+        "id": 181,
+        "terytCode": "1603",
+        "name": "kędzierzyńsko-kozielski",
+        "parentId": 8
+    },
+    {
+        "id": 182,
+        "terytCode": "1604",
+        "name": "kluczborski",
+        "parentId": 8
+    },
+    {
+        "id": 183,
+        "terytCode": "1605",
+        "name": "krapkowicki",
+        "parentId": 8
+    },
+    {
+        "id": 184,
+        "terytCode": "1606",
+        "name": "namysłowski",
+        "parentId": 8
+    },
+    {
+        "id": 185,
+        "terytCode": "1607",
+        "name": "nyski",
+        "parentId": 8
+    },
+    {
+        "id": 186,
+        "terytCode": "1608",
+        "name": "oleski",
+        "parentId": 8
+    },
+    {
+        "id": 187,
+        "terytCode": "1609",
+        "name": "opolski",
+        "parentId": 8
+    },
+    {
+        "id": 188,
+        "terytCode": "1610",
+        "name": "prudnicki",
+        "parentId": 8
+    },
+    {
+        "id": 189,
+        "terytCode": "1611",
+        "name": "strzelecki",
+        "parentId": 8
+    },
+    {
+        "id": 190,
+        "terytCode": "1661",
+        "name": "Opole",
+        "parentId": 8
+    },
+    {
+        "id": 191,
+        "terytCode": "1801",
+        "name": "bieszczadzki",
+        "parentId": 9
+    },
+    {
+        "id": 192,
+        "terytCode": "1802",
+        "name": "brzozowski",
+        "parentId": 9
+    },
+    {
+        "id": 193,
+        "terytCode": "1803",
+        "name": "dębicki",
+        "parentId": 9
+    },
+    {
+        "id": 194,
+        "terytCode": "1804",
+        "name": "jarosławski",
+        "parentId": 9
+    },
+    {
+        "id": 195,
+        "terytCode": "1805",
+        "name": "jasielski",
+        "parentId": 9
+    },
+    {
+        "id": 196,
+        "terytCode": "1806",
+        "name": "kolbuszowski",
+        "parentId": 9
+    },
+    {
+        "id": 197,
+        "terytCode": "1807",
+        "name": "krośnieński",
+        "parentId": 9
+    },
+    {
+        "id": 198,
+        "terytCode": "1808",
+        "name": "leżajski",
+        "parentId": 9
+    },
+    {
+        "id": 199,
+        "terytCode": "1809",
+        "name": "lubaczowski",
+        "parentId": 9
+    },
+    {
+        "id": 200,
+        "terytCode": "1810",
+        "name": "łańcucki",
+        "parentId": 9
+    },
+    {
+        "id": 201,
+        "terytCode": "1811",
+        "name": "mielecki",
+        "parentId": 9
+    },
+    {
+        "id": 202,
+        "terytCode": "1812",
+        "name": "niżański",
+        "parentId": 9
+    },
+    {
+        "id": 203,
+        "terytCode": "1813",
+        "name": "przemyski",
+        "parentId": 9
+    },
+    {
+        "id": 204,
+        "terytCode": "1814",
+        "name": "przeworski",
+        "parentId": 9
+    },
+    {
+        "id": 205,
+        "terytCode": "1815",
+        "name": "ropczycko-sędziszowski",
+        "parentId": 9
+    },
+    {
+        "id": 206,
+        "terytCode": "1816",
+        "name": "rzeszowski",
+        "parentId": 9
+    },
+    {
+        "id": 207,
+        "terytCode": "1817",
+        "name": "sanocki",
+        "parentId": 9
+    },
+    {
+        "id": 208,
+        "terytCode": "1818",
+        "name": "stalowowolski",
+        "parentId": 9
+    },
+    {
+        "id": 209,
+        "terytCode": "1819",
+        "name": "strzyżowski",
+        "parentId": 9
+    },
+    {
+        "id": 210,
+        "terytCode": "1820",
+        "name": "tarnobrzeski",
+        "parentId": 9
+    },
+    {
+        "id": 211,
+        "terytCode": "1821",
+        "name": "leski",
+        "parentId": 9
+    },
+    {
+        "id": 212,
+        "terytCode": "1861",
+        "name": "Krosno",
+        "parentId": 9
+    },
+    {
+        "id": 213,
+        "terytCode": "1862",
+        "name": "Przemyśl",
+        "parentId": 9
+    },
+    {
+        "id": 214,
+        "terytCode": "1863",
+        "name": "Rzeszów",
+        "parentId": 9
+    },
+    {
+        "id": 215,
+        "terytCode": "1864",
+        "name": "Tarnobrzeg",
+        "parentId": 9
+    },
+    {
+        "id": 216,
+        "terytCode": "2001",
+        "name": "augustowski",
+        "parentId": 10
+    },
+    {
+        "id": 217,
+        "terytCode": "2002",
+        "name": "białostocki",
+        "parentId": 10
+    },
+    {
+        "id": 218,
+        "terytCode": "2003",
+        "name": "bielski",
+        "parentId": 10
+    },
+    {
+        "id": 219,
+        "terytCode": "2004",
+        "name": "grajewski",
+        "parentId": 10
+    },
+    {
+        "id": 220,
+        "terytCode": "2005",
+        "name": "hajnowski",
+        "parentId": 10
+    },
+    {
+        "id": 221,
+        "terytCode": "2006",
+        "name": "kolneński",
+        "parentId": 10
+    },
+    {
+        "id": 222,
+        "terytCode": "2007",
+        "name": "łomżyński",
+        "parentId": 10
+    },
+    {
+        "id": 223,
+        "terytCode": "2008",
+        "name": "moniecki",
+        "parentId": 10
+    },
+    {
+        "id": 224,
+        "terytCode": "2009",
+        "name": "sejneński",
+        "parentId": 10
+    },
+    {
+        "id": 225,
+        "terytCode": "2010",
+        "name": "siemiatycki",
+        "parentId": 10
+    },
+    {
+        "id": 226,
+        "terytCode": "2011",
+        "name": "sokólski",
+        "parentId": 10
+    },
+    {
+        "id": 227,
+        "terytCode": "2012",
+        "name": "suwalski",
+        "parentId": 10
+    },
+    {
+        "id": 228,
+        "terytCode": "2013",
+        "name": "wysokomazowiecki",
+        "parentId": 10
+    },
+    {
+        "id": 229,
+        "terytCode": "2014",
+        "name": "zambrowski",
+        "parentId": 10
+    },
+    {
+        "id": 230,
+        "terytCode": "2061",
+        "name": "Białystok",
+        "parentId": 10
+    },
+    {
+        "id": 231,
+        "terytCode": "2062",
+        "name": "Łomża",
+        "parentId": 10
+    },
+    {
+        "id": 232,
+        "terytCode": "2063",
+        "name": "Suwałki",
+        "parentId": 10
+    },
+    {
+        "id": 233,
+        "terytCode": "2201",
+        "name": "bytowski",
+        "parentId": 11
+    },
+    {
+        "id": 234,
+        "terytCode": "2202",
+        "name": "chojnicki",
+        "parentId": 11
+    },
+    {
+        "id": 235,
+        "terytCode": "2203",
+        "name": "człuchowski",
+        "parentId": 11
+    },
+    {
+        "id": 236,
+        "terytCode": "2204",
+        "name": "gdański",
+        "parentId": 11
+    },
+    {
+        "id": 237,
+        "terytCode": "2205",
+        "name": "kartuski",
+        "parentId": 11
+    },
+    {
+        "id": 238,
+        "terytCode": "2206",
+        "name": "kościerski",
+        "parentId": 11
+    },
+    {
+        "id": 239,
+        "terytCode": "2207",
+        "name": "kwidzyński",
+        "parentId": 11
+    },
+    {
+        "id": 240,
+        "terytCode": "2208",
+        "name": "lęborski",
+        "parentId": 11
+    },
+    {
+        "id": 241,
+        "terytCode": "2209",
+        "name": "malborski",
+        "parentId": 11
+    },
+    {
+        "id": 242,
+        "terytCode": "2210",
+        "name": "nowodworski",
+        "parentId": 11
+    },
+    {
+        "id": 243,
+        "terytCode": "2211",
+        "name": "pucki",
+        "parentId": 11
+    },
+    {
+        "id": 244,
+        "terytCode": "2212",
+        "name": "słupski",
+        "parentId": 11
+    },
+    {
+        "id": 245,
+        "terytCode": "2213",
+        "name": "starogardzki",
+        "parentId": 11
+    },
+    {
+        "id": 246,
+        "terytCode": "2214",
+        "name": "tczewski",
+        "parentId": 11
+    },
+    {
+        "id": 247,
+        "terytCode": "2215",
+        "name": "wejherowski",
+        "parentId": 11
+    },
+    {
+        "id": 248,
+        "terytCode": "2216",
+        "name": "sztumski",
+        "parentId": 11
+    },
+    {
+        "id": 249,
+        "terytCode": "2261",
+        "name": "Gdańsk",
+        "parentId": 11
+    },
+    {
+        "id": 250,
+        "terytCode": "2262",
+        "name": "Gdynia",
+        "parentId": 11
+    },
+    {
+        "id": 251,
+        "terytCode": "2263",
+        "name": "Słupsk",
+        "parentId": 11
+    },
+    {
+        "id": 252,
+        "terytCode": "2264",
+        "name": "Sopot",
+        "parentId": 11
+    },
+    {
+        "id": 253,
+        "terytCode": "2401",
+        "name": "będziński",
+        "parentId": 12
+    },
+    {
+        "id": 254,
+        "terytCode": "2402",
+        "name": "bielski",
+        "parentId": 12
+    },
+    {
+        "id": 255,
+        "terytCode": "2403",
+        "name": "cieszyński",
+        "parentId": 12
+    },
+    {
+        "id": 256,
+        "terytCode": "2404",
+        "name": "częstochowski",
+        "parentId": 12
+    },
+    {
+        "id": 257,
+        "terytCode": "2405",
+        "name": "gliwicki",
+        "parentId": 12
+    },
+    {
+        "id": 258,
+        "terytCode": "2406",
+        "name": "kłobucki",
+        "parentId": 12
+    },
+    {
+        "id": 259,
+        "terytCode": "2407",
+        "name": "lubliniecki",
+        "parentId": 12
+    },
+    {
+        "id": 260,
+        "terytCode": "2408",
+        "name": "mikołowski",
+        "parentId": 12
+    },
+    {
+        "id": 261,
+        "terytCode": "2409",
+        "name": "myszkowski",
+        "parentId": 12
+    },
+    {
+        "id": 262,
+        "terytCode": "2410",
+        "name": "pszczyński",
+        "parentId": 12
+    },
+    {
+        "id": 263,
+        "terytCode": "2411",
+        "name": "raciborski",
+        "parentId": 12
+    },
+    {
+        "id": 264,
+        "terytCode": "2412",
+        "name": "rybnicki",
+        "parentId": 12
+    },
+    {
+        "id": 265,
+        "terytCode": "2413",
+        "name": "tarnogórski",
+        "parentId": 12
+    },
+    {
+        "id": 266,
+        "terytCode": "2414",
+        "name": "bieruńsko-lędziński",
+        "parentId": 12
+    },
+    {
+        "id": 267,
+        "terytCode": "2415",
+        "name": "wodzisławski",
+        "parentId": 12
+    },
+    {
+        "id": 268,
+        "terytCode": "2416",
+        "name": "zawierciański",
+        "parentId": 12
+    },
+    {
+        "id": 269,
+        "terytCode": "2417",
+        "name": "żywiecki",
+        "parentId": 12
+    },
+    {
+        "id": 270,
+        "terytCode": "2461",
+        "name": "Bielsko-Biała",
+        "parentId": 12
+    },
+    {
+        "id": 271,
+        "terytCode": "2462",
+        "name": "Bytom",
+        "parentId": 12
+    },
+    {
+        "id": 272,
+        "terytCode": "2463",
+        "name": "Chorzów",
+        "parentId": 12
+    },
+    {
+        "id": 273,
+        "terytCode": "2464",
+        "name": "Częstochowa",
+        "parentId": 12
+    },
+    {
+        "id": 274,
+        "terytCode": "2465",
+        "name": "Dąbrowa Górnicza",
+        "parentId": 12
+    },
+    {
+        "id": 275,
+        "terytCode": "2466",
+        "name": "Gliwice",
+        "parentId": 12
+    },
+    {
+        "id": 276,
+        "terytCode": "2467",
+        "name": "Jastrzębie-Zdrój",
+        "parentId": 12
+    },
+    {
+        "id": 277,
+        "terytCode": "2468",
+        "name": "Jaworzno",
+        "parentId": 12
+    },
+    {
+        "id": 278,
+        "terytCode": "2469",
+        "name": "Katowice",
+        "parentId": 12
+    },
+    {
+        "id": 279,
+        "terytCode": "2470",
+        "name": "Mysłowice",
+        "parentId": 12
+    },
+    {
+        "id": 280,
+        "terytCode": "2471",
+        "name": "Piekary Śląskie",
+        "parentId": 12
+    },
+    {
+        "id": 281,
+        "terytCode": "2472",
+        "name": "Ruda Śląska",
+        "parentId": 12
+    },
+    {
+        "id": 282,
+        "terytCode": "2473",
+        "name": "Rybnik",
+        "parentId": 12
+    },
+    {
+        "id": 283,
+        "terytCode": "2474",
+        "name": "Siemianowice Śląskie",
+        "parentId": 12
+    },
+    {
+        "id": 284,
+        "terytCode": "2475",
+        "name": "Sosnowiec",
+        "parentId": 12
+    },
+    {
+        "id": 285,
+        "terytCode": "2476",
+        "name": "Świętochłowice",
+        "parentId": 12
+    },
+    {
+        "id": 286,
+        "terytCode": "2477",
+        "name": "Tychy",
+        "parentId": 12
+    },
+    {
+        "id": 287,
+        "terytCode": "2478",
+        "name": "Zabrze",
+        "parentId": 12
+    },
+    {
+        "id": 288,
+        "terytCode": "2479",
+        "name": "Żory",
+        "parentId": 12
+    },
+    {
+        "id": 289,
+        "terytCode": "2601",
+        "name": "buski",
+        "parentId": 13
+    },
+    {
+        "id": 290,
+        "terytCode": "2602",
+        "name": "jędrzejowski",
+        "parentId": 13
+    },
+    {
+        "id": 291,
+        "terytCode": "2603",
+        "name": "kazimierski",
+        "parentId": 13
+    },
+    {
+        "id": 292,
+        "terytCode": "2604",
+        "name": "kielecki",
+        "parentId": 13
+    },
+    {
+        "id": 293,
+        "terytCode": "2605",
+        "name": "konecki",
+        "parentId": 13
+    },
+    {
+        "id": 294,
+        "terytCode": "2606",
+        "name": "opatowski",
+        "parentId": 13
+    },
+    {
+        "id": 295,
+        "terytCode": "2607",
+        "name": "ostrowiecki",
+        "parentId": 13
+    },
+    {
+        "id": 296,
+        "terytCode": "2608",
+        "name": "pińczowski",
+        "parentId": 13
+    },
+    {
+        "id": 297,
+        "terytCode": "2609",
+        "name": "sandomierski",
+        "parentId": 13
+    },
+    {
+        "id": 298,
+        "terytCode": "2610",
+        "name": "skarżyski",
+        "parentId": 13
+    },
+    {
+        "id": 299,
+        "terytCode": "2611",
+        "name": "starachowicki",
+        "parentId": 13
+    },
+    {
+        "id": 300,
+        "terytCode": "2612",
+        "name": "staszowski",
+        "parentId": 13
+    },
+    {
+        "id": 301,
+        "terytCode": "2613",
+        "name": "włoszczowski",
+        "parentId": 13
+    },
+    {
+        "id": 302,
+        "terytCode": "2661",
+        "name": "Kielce",
+        "parentId": 13
+    },
+    {
+        "id": 303,
+        "terytCode": "2801",
+        "name": "bartoszycki",
+        "parentId": 14
+    },
+    {
+        "id": 304,
+        "terytCode": "2802",
+        "name": "braniewski",
+        "parentId": 14
+    },
+    {
+        "id": 305,
+        "terytCode": "2803",
+        "name": "działdowski",
+        "parentId": 14
+    },
+    {
+        "id": 306,
+        "terytCode": "2804",
+        "name": "elbląski",
+        "parentId": 14
+    },
+    {
+        "id": 307,
+        "terytCode": "2805",
+        "name": "ełcki",
+        "parentId": 14
+    },
+    {
+        "id": 308,
+        "terytCode": "2806",
+        "name": "giżycki",
+        "parentId": 14
+    },
+    {
+        "id": 309,
+        "terytCode": "2807",
+        "name": "iławski",
+        "parentId": 14
+    },
+    {
+        "id": 310,
+        "terytCode": "2808",
+        "name": "kętrzyński",
+        "parentId": 14
+    },
+    {
+        "id": 311,
+        "terytCode": "2809",
+        "name": "lidzbarski",
+        "parentId": 14
+    },
+    {
+        "id": 312,
+        "terytCode": "2810",
+        "name": "mrągowski",
+        "parentId": 14
+    },
+    {
+        "id": 313,
+        "terytCode": "2811",
+        "name": "nidzicki",
+        "parentId": 14
+    },
+    {
+        "id": 314,
+        "terytCode": "2812",
+        "name": "nowomiejski",
+        "parentId": 14
+    },
+    {
+        "id": 315,
+        "terytCode": "2813",
+        "name": "olecki",
+        "parentId": 14
+    },
+    {
+        "id": 316,
+        "terytCode": "2814",
+        "name": "olsztyński",
+        "parentId": 14
+    },
+    {
+        "id": 317,
+        "terytCode": "2815",
+        "name": "ostródzki",
+        "parentId": 14
+    },
+    {
+        "id": 318,
+        "terytCode": "2816",
+        "name": "piski",
+        "parentId": 14
+    },
+    {
+        "id": 319,
+        "terytCode": "2817",
+        "name": "szczycieński",
+        "parentId": 14
+    },
+    {
+        "id": 320,
+        "terytCode": "2818",
+        "name": "gołdapski",
+        "parentId": 14
+    },
+    {
+        "id": 321,
+        "terytCode": "2819",
+        "name": "węgorzewski",
+        "parentId": 14
+    },
+    {
+        "id": 322,
+        "terytCode": "2861",
+        "name": "Elbląg",
+        "parentId": 14
+    },
+    {
+        "id": 323,
+        "terytCode": "2862",
+        "name": "Olsztyn",
+        "parentId": 14
+    },
+    {
+        "id": 324,
+        "terytCode": "3001",
+        "name": "chodzieski",
+        "parentId": 15
+    },
+    {
+        "id": 325,
+        "terytCode": "3002",
+        "name": "czarnkowsko-trzcianecki",
+        "parentId": 15
+    },
+    {
+        "id": 326,
+        "terytCode": "3003",
+        "name": "gnieźnieński",
+        "parentId": 15
+    },
+    {
+        "id": 327,
+        "terytCode": "3004",
+        "name": "gostyński",
+        "parentId": 15
+    },
+    {
+        "id": 328,
+        "terytCode": "3005",
+        "name": "grodziski",
+        "parentId": 15
+    },
+    {
+        "id": 329,
+        "terytCode": "3006",
+        "name": "jarociński",
+        "parentId": 15
+    },
+    {
+        "id": 330,
+        "terytCode": "3007",
+        "name": "kaliski",
+        "parentId": 15
+    },
+    {
+        "id": 331,
+        "terytCode": "3008",
+        "name": "kępiński",
+        "parentId": 15
+    },
+    {
+        "id": 332,
+        "terytCode": "3009",
+        "name": "kolski",
+        "parentId": 15
+    },
+    {
+        "id": 333,
+        "terytCode": "3010",
+        "name": "koniński",
+        "parentId": 15
+    },
+    {
+        "id": 334,
+        "terytCode": "3011",
+        "name": "kościański",
+        "parentId": 15
+    },
+    {
+        "id": 335,
+        "terytCode": "3012",
+        "name": "krotoszyński",
+        "parentId": 15
+    },
+    {
+        "id": 336,
+        "terytCode": "3013",
+        "name": "leszczyński",
+        "parentId": 15
+    },
+    {
+        "id": 337,
+        "terytCode": "3014",
+        "name": "międzychodzki",
+        "parentId": 15
+    },
+    {
+        "id": 338,
+        "terytCode": "3015",
+        "name": "nowotomyski",
+        "parentId": 15
+    },
+    {
+        "id": 339,
+        "terytCode": "3016",
+        "name": "obornicki",
+        "parentId": 15
+    },
+    {
+        "id": 340,
+        "terytCode": "3017",
+        "name": "ostrowski",
+        "parentId": 15
+    },
+    {
+        "id": 341,
+        "terytCode": "3018",
+        "name": "ostrzeszowski",
+        "parentId": 15
+    },
+    {
+        "id": 342,
+        "terytCode": "3019",
+        "name": "pilski",
+        "parentId": 15
+    },
+    {
+        "id": 343,
+        "terytCode": "3020",
+        "name": "pleszewski",
+        "parentId": 15
+    },
+    {
+        "id": 344,
+        "terytCode": "3021",
+        "name": "poznański",
+        "parentId": 15
+    },
+    {
+        "id": 345,
+        "terytCode": "3022",
+        "name": "rawicki",
+        "parentId": 15
+    },
+    {
+        "id": 346,
+        "terytCode": "3023",
+        "name": "słupecki",
+        "parentId": 15
+    },
+    {
+        "id": 347,
+        "terytCode": "3024",
+        "name": "szamotulski",
+        "parentId": 15
+    },
+    {
+        "id": 348,
+        "terytCode": "3025",
+        "name": "średzki",
+        "parentId": 15
+    },
+    {
+        "id": 349,
+        "terytCode": "3026",
+        "name": "śremski",
+        "parentId": 15
+    },
+    {
+        "id": 350,
+        "terytCode": "3027",
+        "name": "turecki",
+        "parentId": 15
+    },
+    {
+        "id": 351,
+        "terytCode": "3028",
+        "name": "wągrowiecki",
+        "parentId": 15
+    },
+    {
+        "id": 352,
+        "terytCode": "3029",
+        "name": "wolsztyński",
+        "parentId": 15
+    },
+    {
+        "id": 353,
+        "terytCode": "3030",
+        "name": "wrzesiński",
+        "parentId": 15
+    },
+    {
+        "id": 354,
+        "terytCode": "3031",
+        "name": "złotowski",
+        "parentId": 15
+    },
+    {
+        "id": 355,
+        "terytCode": "3061",
+        "name": "Kalisz",
+        "parentId": 15
+    },
+    {
+        "id": 356,
+        "terytCode": "3062",
+        "name": "Konin",
+        "parentId": 15
+    },
+    {
+        "id": 357,
+        "terytCode": "3063",
+        "name": "Leszno",
+        "parentId": 15
+    },
+    {
+        "id": 358,
+        "terytCode": "3064",
+        "name": "Poznań",
+        "parentId": 15
+    },
+    {
+        "id": 359,
+        "terytCode": "3201",
+        "name": "białogardzki",
+        "parentId": 16
+    },
+    {
+        "id": 360,
+        "terytCode": "3202",
+        "name": "choszczeński",
+        "parentId": 16
+    },
+    {
+        "id": 361,
+        "terytCode": "3203",
+        "name": "drawski",
+        "parentId": 16
+    },
+    {
+        "id": 362,
+        "terytCode": "3204",
+        "name": "goleniowski",
+        "parentId": 16
+    },
+    {
+        "id": 363,
+        "terytCode": "3205",
+        "name": "gryficki",
+        "parentId": 16
+    },
+    {
+        "id": 364,
+        "terytCode": "3206",
+        "name": "gryfiński",
+        "parentId": 16
+    },
+    {
+        "id": 365,
+        "terytCode": "3207",
+        "name": "kamieński",
+        "parentId": 16
+    },
+    {
+        "id": 366,
+        "terytCode": "3208",
+        "name": "kołobrzeski",
+        "parentId": 16
+    },
+    {
+        "id": 367,
+        "terytCode": "3209",
+        "name": "koszaliński",
+        "parentId": 16
+    },
+    {
+        "id": 368,
+        "terytCode": "3210",
+        "name": "myśliborski",
+        "parentId": 16
+    },
+    {
+        "id": 369,
+        "terytCode": "3211",
+        "name": "policki",
+        "parentId": 16
+    },
+    {
+        "id": 370,
+        "terytCode": "3212",
+        "name": "pyrzycki",
+        "parentId": 16
+    },
+    {
+        "id": 371,
+        "terytCode": "3213",
+        "name": "sławieński",
+        "parentId": 16
+    },
+    {
+        "id": 372,
+        "terytCode": "3214",
+        "name": "stargardzki",
+        "parentId": 16
+    },
+    {
+        "id": 373,
+        "terytCode": "3215",
+        "name": "szczecinecki",
+        "parentId": 16
+    },
+    {
+        "id": 374,
+        "terytCode": "3216",
+        "name": "świdwiński",
+        "parentId": 16
+    },
+    {
+        "id": 375,
+        "terytCode": "3217",
+        "name": "wałecki",
+        "parentId": 16
+    },
+    {
+        "id": 376,
+        "terytCode": "3218",
+        "name": "łobeski",
+        "parentId": 16
+    },
+    {
+        "id": 377,
+        "terytCode": "3261",
+        "name": "Koszalin",
+        "parentId": 16
+    },
+    {
+        "id": 378,
+        "terytCode": "3262",
+        "name": "Szczecin",
+        "parentId": 16
+    },
+    {
+        "id": 379,
+        "terytCode": "3263",
+        "name": "Świnoujście",
+        "parentId": 16
+    },
+    {
+        "id": 380,
+        "terytCode": "0265",
+        "name": "Wałbrzych",
+        "parentId": 1
+    }
+]

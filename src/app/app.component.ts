@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     { text: 'Six', cols: 2, rows: 3 },
   ];
 
-  public data;
+  public data = new Array<any>();
 
   constructor(private dataService: DataService) {
     this.dataService.$covidData.subscribe((result) => {

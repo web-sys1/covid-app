@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "terytCode": "02",
+        "name": "DOLNOŚLĄSKIE"
+    },
+    {
+        "id": 2,
+        "terytCode": "04",
+        "name": "KUJAWSKO-POMORSKIE"
+    },
+    {
+        "id": 3,
+        "terytCode": "06",
+        "name": "LUBELSKIE"
+    },
+    {
+        "id": 4,
+        "terytCode": "08",
+        "name": "LUBUSKIE"
+    },
+    {
+        "id": 5,
+        "terytCode": "10",
+        "name": "ŁÓDZKIE"
+    },
+    {
+        "id": 6,
+        "terytCode": "12",
+        "name": "MAŁOPOLSKIE"
+    },
+    {
+        "id": 7,
+        "terytCode": "14",
+        "name": "MAZOWIECKIE"
+    },
+    {
+        "id": 8,
+        "terytCode": "16",
+        "name": "OPOLSKIE"
+    },
+    {
+        "id": 9,
+        "terytCode": "18",
+        "name": "PODKARPACKIE"
+    },
+    {
+        "id": 10,
+        "terytCode": "20",
+        "name": "PODLASKIE"
+    },
+    {
+        "id": 11,
+        "terytCode": "22",
+        "name": "POMORSKIE"
+    },
+    {
+        "id": 12,
+        "terytCode": "24",
+        "name": "ŚLĄSKIE"
+    },
+    {
+        "id": 13,
+        "terytCode": "26",
+        "name": "ŚWIĘTOKRZYSKIE"
+    },
+    {
+        "id": 14,
+        "terytCode": "28",
+        "name": "WARMIŃSKO-MAZURSKIE"
+    },
+    {
+        "id": 15,
+        "terytCode": "30",
+        "name": "WIELKOPOLSKIE"
+    },
+    {
+        "id": 16,
+        "terytCode": "32",
+        "name": "ZACHODNIOPOMORSKIE"
+    }
+]

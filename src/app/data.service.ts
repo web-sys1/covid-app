@@ -1,21 +1,32 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { DataBackendService } from './data-backend.service';
+import { AdministrativeItem } from './models/administrativeItem.model';
+
+//local data import
+import level1AdministrativeData from './_administrative-data/level1.json';
+import level2AdministrativeData from './_administrative-data/level2.json';
+import topoFeatures from './_administrative-data/topoFeatures.json';
+
 
 @Injectable()
 export class DataService {
+    private data = new Array<any>();
 
-    private covidDataSource = new Subject<any>();
+    private level1Data: AdministrativeItem[] = level1AdministrativeData;
+    private level2Data: AdministrativeItem[] = level2AdministrativeData;
+    private topojsonObject = topoFeatures;
+
+    private covidDataSource = new Subject<any[]>();
     public $covidData = this.covidDataSource.asObservable();
 
-    constructor(private http: HttpClient) { }
+    constructor(private dataBackendService: DataBackendService) {
+    }
 
     public init() {
-        this.http.get('/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2', { responseType: 'text' }).subscribe(data => {
-            const parsedData = JSON.parse(data.substring(data.indexOf("[{"), data.indexOf("}]") + 2).replace(/\\/g, ""));
-            const sum = parsedData.map(item => Number.parseInt(item.Liczba)).reduce((a, b) => a + b, 0);
-            console.log(sum);
-            this.covidDataSource.next(parsedData);
+        this.dataBackendService.getCovidData().subscribe(data => {
+            this.data = data;
+            this.covidDataSource.next(data);
         });
     }
 }

@@ -1,13 +1,15 @@
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
-import { NgModule, Injectable } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdministrativeHierarchyModule } from './administrative-hierarchy/administrative-hierarchy.module';
+import { AngularMaterialModule } from './angular-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularMaterialModule } from './angular-material.module';
-import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './data.service';
-import { DataBackendService } from './data-backend.service';
+import { DataBackendService } from './services/data-backend.service';
+import { DataService } from './services/data.service';
+import { TopojsonService } from './services/topojson.service';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { DataBackendService } from './data-backend.service';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
+    AdministrativeHierarchyModule
   ],
-  providers: [DataService, DataBackendService],
+  providers: [DataService, DataBackendService, TopojsonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

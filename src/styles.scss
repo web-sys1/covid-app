@@ -10,5 +10,52 @@ mat-grid-tile {
 
 mat-sidenav-container {
   height: 100vh;
-  background-color:#111111!important;
+  background-color:#111111 !important;
+}
+
+.mat-accordion.division-hierarchy {
+  .mat-expansion-panel {
+    background: var(--color-accent) !important;
+  }
+  
+  .mat-expansion-panel-body {
+    padding: 0 10px 16px !important;
+  }
+  
+  .mat-expansion-panel-header {
+    font-size: 14px !important;
+    padding: 0 20px !important;
+
+    .mat-expansion-panel-header-title {
+      color: lightgray!important;
+    }
+  }
+  
+  .mat-expansion-panel-spacing {
+    margin: 16px 0 !important;
+  }
+
+  .simplebar-content>.mat-expansion-panel-spacing:first-child {
+    margin-top: 0!important;
+  }
+  
+  .simplebar-content>.mat-expansion-panel-spacing:last-child {
+    margin-bottom: 0!important;
+  }
+}
+
+.adm-hierarchy-tile {
+    background-color: transparent!important;
+    app-administrative-hierarchy {
+        height: 100%!important;
+        width: 100%!important;
+    }
+}
+
+.simplebar-layout {
+  height: 100%;
+}
+
+.simplebar-small {
+  height: 200px;
 }

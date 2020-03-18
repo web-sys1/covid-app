@@ -1,0 +1,18 @@
+<mat-accordion class="division-hierarchy">
+    <ngx-simplebar class="simplebar-layout">
+        <mat-expansion-panel *ngFor="let node of hierarchyNodes">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{node.name | uppercase}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-action-list>
+                <ngx-simplebar class="simplebar-small">
+                    <button mat-list-item class="level2-node" *ngFor="let child of node.children">
+                        {{child.name}}
+                    </button>
+                </ngx-simplebar>
+            </mat-action-list>
+        </mat-expansion-panel>
+    </ngx-simplebar>
+</mat-accordion>

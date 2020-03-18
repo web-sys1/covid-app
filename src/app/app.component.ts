@@ -1,39 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpRequest, HttpClient, HttpHeaders } from '@angular/common/http';
-import { DataService } from './data.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DataService } from './services/data.service';
 
-export interface Tile {
-  cols: number;
-  rows: number;
-  text: string;
-}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
-  tiles: Tile[] = [
-    { text: 'COVID-19', cols: 6, rows: 1 },
-    { text: 'Two', cols: 1, rows: 9 },
-    { text: 'Three', cols: 3, rows: 9 },
-    { text: 'Four', cols: 2, rows: 3 },
-    { text: 'Five', cols: 2, rows: 3 },
-    { text: 'Six', cols: 2, rows: 3 },
-  ];
-
+  private subscriptions = new Subscription();
   public data = new Array<any>();
+  public mapSize = 3;
+  public admHierarchySize = 1;
 
   constructor(private dataService: DataService) {
-    this.dataService.$covidData.subscribe((result) => {
+    this.subscriptions.add(this.dataService.$covidData.subscribe((result) => {
       this.data = result;
-    })
-   }
+    }))
+  }
 
   ngOnInit(): void {
+    this.mapSize = (window.innerWidth <= 1100) ? 4 : 3;
+    this.admHierarchySize = (window.innerWidth <= 1100) ? 2 : 1;
     this.dataService.init();
   }
 
+  public onResize(event): void {
+    this.mapSize = (event.target.innerWidth <= 1100) ? 4 : 3;
+    this.admHierarchySize = (window.innerWidth <= 1100) ? 2 : 1;
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 }

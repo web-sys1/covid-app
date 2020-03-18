@@ -1,7 +1,23 @@
-<mat-sidenav-container style="height:100vh">
-  <mat-grid-list class="grid-list" cols="6" rowHeight="fit" gutterSize="20">
-      <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
-        {{tile.text}} {{data.length}}
-      </mat-grid-tile>
-    </mat-grid-list>
+<mat-sidenav-container>
+  <div class="mat-grid-title">
+    title
+  </div>
+  <mat-grid-list class="grid-list" cols="6" rowHeight="fit" gutterSize="20" (window:resize)="onResize($event)">
+    <mat-grid-tile class="adm-hierarchy-tile" [colspan]="admHierarchySize" rowspan="9">
+      <app-administrative-hierarchy></app-administrative-hierarchy>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="mapSize" rowspan="9">
+      map
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="3">
+      graph 1
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="3">
+      graph 2
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="3">
+      graph 3
+    </mat-grid-tile>
+  </mat-grid-list>
 </mat-sidenav-container>
+<router-outlet></router-outlet>

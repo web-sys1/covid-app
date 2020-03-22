@@ -16,6 +16,10 @@ mat-sidenav-container {
 .mat-accordion.division-hierarchy {
   .mat-expansion-panel {
     background: var(--color-accent) !important;
+  } 
+  .mat-expansion-panel:first-of-type {
+      border-top-right-radius: 0!important;
+      border-top-left-radius: 0!important;
   }
   
   .mat-expansion-panel-body {
@@ -52,10 +56,39 @@ mat-sidenav-container {
     }
 }
 
+.map-tile {
+    app-map {
+      height: 100%!important;
+      width: 100%!important;
+    }
+}
+
 .simplebar-layout {
-  height: 100%;
+  height: calc(100% - 65px);
 }
 
 .simplebar-small {
   height: 200px;
+}
+
+.mat-form-field-appearance-legacy {
+  .mat-form-field-label {
+    color: rgba(255,255,255,.2)!important;
+  }
+  .mat-form-field-wrapper {
+    margin: 0 10px;
+  }
+  .mat-form-field-infix {
+    border-top: 1em solid transparent;
+    >input {
+      color: lightgray !important;
+      opacity: .7;
+      font-variant: all-petite-caps;
+    }
+  }
+}
+
+.simplebar-scrollbar {
+  width: 9px;
+  opacity: .5;
 }

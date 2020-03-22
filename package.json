@@ -21,6 +21,8 @@
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
+    "ol": "^6.2.1",
+    "ol-ext": "^3.1.0",
     "rxjs": "~6.5.4",
     "simplebar-angular": "^2.1.0",
     "topojson": "^3.0.2",

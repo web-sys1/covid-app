@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FlatAdministrativeItem } from '../models/flatAdministrativeItem.model';
+import _topoCountries from '../_administrative-data/geo_eu.json';
 import _topoFeatures from '../_administrative-data/topoFeatures.json';
 
 
@@ -12,8 +13,18 @@ export class TopojsonService {
     private readonly level2ItemCodeKey = "POW_TERYT";
 
     private topojsonObject = _topoFeatures;
+    private topojsonCountries = _topoCountries;
 
     constructor() { }
+
+    public getCountries() {
+        const geojson = topojson.feature(
+            this.topojsonCountries,
+            this.getTopologyLayer(this.topojsonCountries)
+        );
+        // console.log(geojson2.features.map(item => item.properties["name"]));
+        return geojson.features
+    }
 
     public getFlatItemsWithParents(): FlatAdministrativeItem[] {
         const geojson = topojson.feature(

@@ -9,10 +9,16 @@ import { HierarchyNode } from './models/hierarchyNode.model';
 })
 export class AdministrativeHierarchyComponent implements OnInit {
   public hierarchyNodes: HierarchyNode[];
+  public options = {
+    autoHide: false,
+    classNames: {
+      scrollbar: 'simplebar-scrollbar',
+    }
+  }
 
   constructor(private administrativeHierarchyService: AdministrativeHierarchyService) {
     this.hierarchyNodes = this.administrativeHierarchyService.getHierarchyNodes();
-   }
+  }
 
   ngOnInit(): void {
   }

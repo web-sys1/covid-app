@@ -29,7 +29,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/theme.scss"
+              "src/theme.scss",
+              "node_modules/ol/ol.css",
+              "node_modules/ol-ext/dist/ol-ext.css"
             ],
             "scripts": [
               "node_modules/topojson/dist/topojson.min.js"]

@@ -6,6 +6,7 @@ import { AdministrativeHierarchyModule } from './administrative-hierarchy/admini
 import { AngularMaterialModule } from './angular-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MapModule } from './map/map.module';
 import { DataBackendService } from './services/data-backend.service';
 import { DataService } from './services/data.service';
 import { TopojsonService } from './services/topojson.service';
@@ -21,7 +22,8 @@ import { TopojsonService } from './services/topojson.service';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    AdministrativeHierarchyModule
+    AdministrativeHierarchyModule,
+    MapModule
   ],
   providers: [DataService, DataBackendService, TopojsonService],
   bootstrap: [AppComponent]

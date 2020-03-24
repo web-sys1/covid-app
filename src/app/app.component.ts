@@ -13,7 +13,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscriptions = new Subscription();
   public data = new Array<any>();
   public mapSize = 3;
-  public admHierarchySize = 1;
+  public countriesTileSize = 1;
 
   constructor(private dataService: DataService) {
     this.subscriptions.add(this.dataService.$covidData.subscribe((result) => {
@@ -23,13 +23,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.mapSize = (window.innerWidth <= 1100) ? 4 : 3;
-    this.admHierarchySize = (window.innerWidth <= 1100) ? 2 : 1;
+    this.countriesTileSize = (window.innerWidth <= 1100) ? 2 : 1;
     this.dataService.init();
   }
 
   public onResize(event): void {
     this.mapSize = (event.target.innerWidth <= 1100) ? 4 : 3;
-    this.admHierarchySize = (window.innerWidth <= 1100) ? 2 : 1;
+    this.countriesTileSize = (window.innerWidth <= 1100) ? 2 : 1;
   }
 
   ngOnDestroy(): void {

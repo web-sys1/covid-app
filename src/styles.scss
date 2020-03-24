@@ -13,44 +13,18 @@ mat-sidenav-container {
   background-color:#111111 !important;
 }
 
-.mat-accordion.division-hierarchy {
-  .mat-expansion-panel {
-    background: var(--color-accent) !important;
-  } 
-  .mat-expansion-panel:first-of-type {
-      border-top-right-radius: 0!important;
-      border-top-left-radius: 0!important;
-  }
-  
-  .mat-expansion-panel-body {
-    padding: 0 10px 16px !important;
-  }
-  
-  .mat-expansion-panel-header {
-    font-size: 14px !important;
-    padding: 0 20px !important;
-
-    .mat-expansion-panel-header-title {
-      color: lightgray!important;
-    }
-  }
-  
-  .mat-expansion-panel-spacing {
-    margin: 16px 0 !important;
-  }
-
-  .simplebar-content>.mat-expansion-panel-spacing:first-child {
-    margin-top: 0!important;
-  }
-  
-  .simplebar-content>.mat-expansion-panel-spacing:last-child {
-    margin-bottom: 0!important;
+.country-list {
+  height: 100%;
+  background: var(--color-accent) !important;
+  color: lightgray!important; 
+  .mat-action-list {
+    margin-bottom: 15px;
   }
 }
 
-.adm-hierarchy-tile {
+.countries-tile {
     background-color: transparent!important;
-    app-administrative-hierarchy {
+    app-countries-list {
         height: 100%!important;
         width: 100%!important;
     }
@@ -65,10 +39,6 @@ mat-sidenav-container {
 
 .simplebar-layout {
   height: calc(100% - 65px);
-}
-
-.simplebar-small {
-  height: 200px;
 }
 
 .mat-form-field-appearance-legacy {

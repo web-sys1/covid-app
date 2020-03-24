@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { buffer } from 'ol/extent';
 import TopoJSON from 'ol/format/TopoJSON';
 import { Vector as VectorLayer } from 'ol/layer';
 import OlMap from 'ol/Map';
@@ -11,11 +12,7 @@ import data from '../_administrative-data/geo_eu.json';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss',
-    // '../../../node_modules/ol/ol.css',
-    // '../../../node_modules/ol-ext/dist/ol-ext.css'
-  ],
-  // encapsulation: ViewEncapsulation.None
+  styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, AfterViewInit {
 
@@ -28,7 +25,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    var style = new Style({
+    const style = new Style({
       fill: new Fill({
         color: '#000000'
       }),
@@ -38,24 +35,26 @@ export class MapComponent implements OnInit, AfterViewInit {
       })
     });
 
-    var vectorSource = new VectorSource({
+    const vectorSource = new VectorSource({
       features: (new TopoJSON()).readFeatures(data)
     });
 
-    var vector = new VectorLayer({
+    const vectorLayer = new VectorLayer({
       source: vectorSource,
       style: style
     });
 
+    const extent = [-3506188.846553889, 3808238.996511435, 5043694.81020748, 11552231.6474777]
+    const extentWithBuffer = buffer(extent, 2000000);
 
     this.map = new OlMap({
       target: 'map',
-      layers: [
-        vector
-      ],
+      layers: [vectorLayer],
+
       view: new View({
-        center: [703079.7791264898, 7829220.284081122],
-        zoom: 3.65
+        center: [953408.4735, 7577321.8637],
+        zoom: 3.9,
+        extent: extentWithBuffer
       }),
     });
   }

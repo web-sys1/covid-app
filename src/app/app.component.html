@@ -1,10 +1,10 @@
 <mat-sidenav-container>
   <div class="mat-grid-title">
-    title
+    CORONAVIRUS IN EUROPE
   </div>
   <mat-grid-list class="grid-list" cols="6" rowHeight="fit" gutterSize="20" (window:resize)="onResize($event)">
-    <mat-grid-tile class="adm-hierarchy-tile" [colspan]="admHierarchySize" rowspan="9">
-      <app-administrative-hierarchy></app-administrative-hierarchy>
+    <mat-grid-tile class="countries-tile" [colspan]="countriesTileSize" rowspan="9">
+      <app-countries-list></app-countries-list>
     </mat-grid-tile>
     <mat-grid-tile class="map-tile" [colspan]="mapSize" rowspan="9">
       <app-map></app-map>

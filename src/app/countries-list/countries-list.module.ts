@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { AngularMaterialModule } from '../angular-material.module';
-import { AdministrativeHierarchyComponent } from './administrative-hierarchy.component';
-import { AdministrativeHierarchyService } from './administrative-hierarchy.service';
+import { CountriesListComponent } from './countries-list.component';
+import { CountriesListService } from './countries-list.service';
 
 @NgModule({
   imports: [
@@ -14,11 +14,11 @@ import { AdministrativeHierarchyService } from './administrative-hierarchy.servi
     SimplebarAngularModule
   ],
   declarations: [
-    AdministrativeHierarchyComponent
+    CountriesListComponent
   ],
   exports: [
-    AdministrativeHierarchyComponent
+    CountriesListComponent
   ],
-  providers: [AdministrativeHierarchyService],
+  providers: [CountriesListService],
 })
-export class AdministrativeHierarchyModule { }
+export class CountriesListModule { }

@@ -2,15 +2,14 @@
     <form class="search-from">
         <mat-form-field class="search-bar-full-width">
             <mat-label>SEARCH...</mat-label>
-            <input matInput autocomplete="off" spellcheck="false">
+            <input matInput #countryInput autocomplete="off" spellcheck="false" (input)="filterCountries(countryInput.value)">
         </mat-form-field>
     </form>
     <ngx-simplebar [options]="options" class="simplebar-layout">
         <mat-action-list>
             <button mat-list-item class="country-node" *ngFor="let country of countries">
-                {{country.properties.name}}
+                {{country.values_.name_long}}
             </button>
         </mat-action-list>
     </ngx-simplebar>
-
 </div>

@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { CountryCovidData } from './models/countryCovidData.model';
+import { CountryCovidDataWithTimeline } from './models/countryCovidDataWithTimeline.model';
 import { DataService } from './services/data.service';
 
 
@@ -8,23 +9,20 @@ import { DataService } from './services/data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
 
-  private subscriptions = new Subscription();
-  public data = new Array<any>();
+  public data = new Array<CountryCovidData>();
+  public timelineData = new Array<CountryCovidDataWithTimeline>();
   public mapSize = 3;
   public countriesTileSize = 1;
 
   constructor(private dataService: DataService) {
-    this.subscriptions.add(this.dataService.$covidData.subscribe((result) => {
-      this.data = result;
-    }))
   }
 
   ngOnInit(): void {
+    this.dataService.init();
     this.mapSize = (window.innerWidth <= 1100) ? 4 : 3;
     this.countriesTileSize = (window.innerWidth <= 1100) ? 2 : 1;
-    this.dataService.init();
   }
 
   public onResize(event): void {
@@ -32,8 +30,4 @@ export class AppComponent implements OnInit, OnDestroy {
     this.countriesTileSize = (window.innerWidth <= 1100) ? 2 : 1;
   }
 
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
-  }
-  
 }

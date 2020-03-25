@@ -1,12 +1,11 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { buffer } from 'ol/extent';
-import TopoJSON from 'ol/format/TopoJSON';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Vector as VectorLayer } from 'ol/layer';
 import OlMap from 'ol/Map';
 import { Vector as VectorSource } from 'ol/source';
 import { Fill, Stroke, Style } from 'ol/style';
 import View from 'ol/View';
-import data from '../_administrative-data/geo_eu.json';
+import { Subscription } from 'rxjs';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -14,29 +13,32 @@ import data from '../_administrative-data/geo_eu.json';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit, AfterViewInit {
+export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  private subscription: Subscription;
   public map: OlMap;
+  private featuresWithData;
 
-  constructor() { }
+  constructor(private dataService: DataService) {
 
+  }
   ngOnInit(): void {
+
   }
 
-
   ngAfterViewInit(): void {
-    const style = new Style({
-      fill: new Fill({
-        color: '#000000'
-      }),
-      stroke: new Stroke({
-        color: '#202020',
-        width: 1
-      })
-    });
+    this.subscription = this.dataService.$featuresWithData.subscribe((result) => {
+      this.featuresWithData = result;
+      this.setMap()
+    })
+  }
+
+  private setMap() {
+    const style = this.getStyleForMap();
+    const extent = [-3500000, 3800000, 5000000, 11500000];
 
     const vectorSource = new VectorSource({
-      features: (new TopoJSON()).readFeatures(data)
+      features: this.featuresWithData
     });
 
     const vectorLayer = new VectorLayer({
@@ -44,19 +46,33 @@ export class MapComponent implements OnInit, AfterViewInit {
       style: style
     });
 
-    const extent = [-3506188.846553889, 3808238.996511435, 5043694.81020748, 11552231.6474777]
-    const extentWithBuffer = buffer(extent, 2000000);
+    const view = new View({
+      center: [950000, 7600000],
+      zoom: 3.9,
+      extent: extent
+    })
 
     this.map = new OlMap({
       target: 'map',
       layers: [vectorLayer],
-
-      view: new View({
-        center: [953408.4735, 7577321.8637],
-        zoom: 3.9,
-        extent: extentWithBuffer
-      }),
+      view: view,
     });
+  }
+
+  private getStyleForMap() {
+    const style = new Style({
+      fill: new Fill({ color: '#404040' }),
+      stroke: new Stroke({
+        color: '#202020',
+        width: 1.5
+      })
+    });
+
+    return style;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

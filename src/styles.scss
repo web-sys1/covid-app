@@ -62,3 +62,10 @@ mat-sidenav-container {
   width: 9px;
   opacity: .5;
 }
+
+.ol-zoom.ol-control {
+  background-color: #404040!important;
+  .ol-zoom-in, .ol-zoom-out {
+    background-color: #404040!important;
+  }
+}

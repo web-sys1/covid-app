@@ -15,7 +15,6 @@ export class DataBackendService {
 
     public getActualCovidDate(): Observable<CountryCovidData[]> {
         return this.http.get(`${sourceUrl}countries`).pipe(map((response) => {
-            this.fixMissingIsoNames(response);
             return <CountryCovidData[]>response;
         }))
     }
@@ -32,15 +31,6 @@ export class DataBackendService {
         response.find(item => item.province == "faroe islands").country = "Faeroe Islands";
         response.find(item => item.province == "gibraltar").country = "Gibraltar";
         response.find(item => item.province == "isle of man").country = "Isle of Man";
-    }
-
-    private fixMissingIsoNames(response: any) {
-        response.find(item => item.country == "UK").countryInfo.iso3 = "GBR";
-        response.find(item => item.country == "North Macedonia").countryInfo.iso3 = "MKD";
-        response.find(item => item.country == "Moldova").countryInfo.iso3 = "MDA";
-        response.find(item => item.country == "Vatican City").countryInfo.iso3 = "VAT";
-        response.find(item => item.country == "Czechia").countryInfo.iso3 = "CZE";
-        response.find(item => item.country == "Faeroe Islands").countryInfo.iso3 = "FRO";
     }
 
     private getAdaptedHistoricalCovidData(response: any): CountryCovidDataWithTimeline[] {

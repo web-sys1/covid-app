@@ -18,10 +18,15 @@ export class DataService {
     private featuresWithDataSource = new Subject<any>()
     public $featuresWithData = this.featuresWithDataSource.asObservable();
 
+    private isLoadingSource = new Subject<boolean>()
+    public $isLoading = this.isLoadingSource.asObservable();
+    
+
     constructor(private dataBackendService: DataBackendService) {
     }
 
     public init(): void {
+        this.isLoadingSource.next(true);
         this.initSubscription = forkJoin(
             this.dataBackendService.getHistoricalCovidData(),
             this.dataBackendService.getActualCovidDate()
@@ -29,6 +34,7 @@ export class DataService {
             this.timelineData = result[0];
             this.data = result[1];
             this.generateFeaturesWithCovidData();
+            this.isLoadingSource.next(false);
         })
     }
 

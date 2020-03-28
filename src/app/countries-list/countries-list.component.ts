@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Feature } from 'ol';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
 
@@ -10,8 +11,8 @@ import { DataService } from '../services/data.service';
 export class CountriesListComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
-  private countriesSource: any[];
-  public countries: any[];
+  private countriesSource: Feature[];
+  public countries: Feature[];
   public options = {
     autoHide: false,
     classNames: {
@@ -30,7 +31,11 @@ export class CountriesListComponent implements OnInit, OnDestroy {
   }
 
   filterCountries(value: string) {
-    this.countries = this.countriesSource.filter(item => item.values_.name.toLowerCase().indexOf(value.toLowerCase()) > -1 )
+    this.countries = this.countriesSource.filter(item => item.getProperties()["name"].toLowerCase().indexOf(value.toLowerCase()) > -1 )
+  }
+
+  animateToFeature(feature: Feature) { 
+    this.dataService.zoomAndPanToFeature(feature);
   }
 
   ngOnDestroy(): void {

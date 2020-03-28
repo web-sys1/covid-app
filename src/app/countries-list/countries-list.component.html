@@ -7,8 +7,8 @@
     </form>
     <ngx-simplebar [options]="options" class="simplebar-layout">
         <mat-action-list>
-            <button mat-list-item class="country-node" *ngFor="let country of countries">
-                {{country.values_.name_long}}
+            <button mat-list-item class="country-node" *ngFor="let country of countries" (click)="animateToFeature(country)">
+                {{country.getProperties()["name_long"]}}
             </button>
         </mat-action-list>
     </ngx-simplebar>

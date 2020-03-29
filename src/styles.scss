@@ -63,9 +63,33 @@ mat-sidenav-container {
   opacity: .5;
 }
 
-.ol-zoom.ol-control {
-  background-color: #404040!important;
-  .ol-zoom-in, .ol-zoom-out {
-    background-color: #404040!important;
+.ol-control {
+  background-color: var(--color-accent)!important;
+  &.ol-zoom {
+    padding: 3px;
+    .ol-zoom-in, .ol-zoom-out {
+      background-color: #404040!important;
+    }
+  }
+  &.ol-extent {
+    top: 63px !important;
+    left: 8px !important;
+    padding: 6px 3px 3px 3px;
+    .ol-extent-button {
+      background-color: #404040!important;
+      span {
+        font-size: 18px!important;
+      }
+    }
+  }
+  button {
+    cursor: pointer;
+    opacity: .7;
+    &:focus {
+      outline: none!important;
+    }
+    &:hover {
+      opacity: 1;
+    }
   }
 }

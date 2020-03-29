@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { Feature } from 'ol';
-import { Extent, getCenter } from 'ol/extent';
+import { defaults as defaultControls } from 'ol/control';
+import { getCenter } from 'ol/extent';
 import VectorLayer from 'ol/layer/Vector';
 import Map from 'ol/Map';
 import VectorSource from 'ol/source/Vector';
@@ -10,6 +11,7 @@ import Style from 'ol/style/Style';
 import View from 'ol/View';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
+import { AnimateToExtentControl } from './animateToExtent';
 
 
 @Component({
@@ -17,17 +19,23 @@ import { DataService } from '../services/data.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MapComponent implements AfterViewInit, OnDestroy {
 
-  private subscription = new Subscription();
   public map: Map;
+  private subscription = new Subscription();
   private featuresWithData: Feature[];
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService) { }
 
-  }
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.subscription.add(this.dataService.$featuresWithData.subscribe((result) => {
+      this.featuresWithData = result;
+      this.setMap()
+    }));
 
+    this.subscription.add(this.dataService.$featureClicked.subscribe((result) => {
+      this.zoomToFeature(result);
+    }));
   }
 
   zoomToFeature(feature) {
@@ -36,8 +44,8 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
     const featureResolution = currentView.getResolutionForExtent(featureGeometry.getExtent())
     const viewResolution = currentView.getResolution();
     const featureCenter = getCenter(featureGeometry.getExtent());
-    let startingTimeout = 300;
     const minFeatureResolution = 1400
+    let startingTimeout = 300;
 
     const fitView = () => this.map.getView().fit(featureGeometry, { padding: [50, 50, 50, 50], duration: 1000 });
 
@@ -58,21 +66,23 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
       fitView();
   }
 
-  ngAfterViewInit(): void {
-    this.subscription.add(this.dataService.$featuresWithData.subscribe((result) => {
-      this.featuresWithData = result;
-      this.setMap()
-    }));
+  private setMap() {
+    const vectorLayer = this.getVectorLayer();
+    const view = this.getViewForMap();
 
-    this.subscription.add(this.dataService.$featureClicked.subscribe((result) => {
-      this.zoomToFeature(result);
-    }));
+    this.map = new Map({
+      target: 'map',
+      layers: [vectorLayer],
+      view: view,
+      controls: defaultControls().extend([
+        new AnimateToExtentControl()
+      ]),
+    });
   }
 
-  private setMap() {
-    const style = this.getStyleForMap();
-    const extent: Extent = [-3500000, 3800000, 5000000, 11500000];
 
+  private getVectorLayer(): VectorLayer {
+    const style = this.getStyleVectorFeatures()
     const vectorSource = new VectorSource({
       overlaps: false,
       features: this.featuresWithData
@@ -84,29 +94,26 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
       updateWhileAnimating: true
     });
 
-    const view = new View({
-      center: [950000, 7600000],
-      zoom: 3.9,
-      extent: extent
-    })
-
-    this.map = new Map({
-      target: 'map',
-      layers: [vectorLayer],
-      view: view,
-    });
+    return vectorLayer;
   }
 
-  private getStyleForMap() {
+  private getStyleVectorFeatures(): Style {
     const style = new Style({
       fill: new Fill({ color: '#404040' }),
-      stroke: new Stroke({
-        color: '#202020',
-        width: 1.5
-      })
+      stroke: new Stroke({ color: '#202020', width: 1.5 })
     });
 
     return style;
+  }
+
+  private getViewForMap(): View {
+    const view = new View({
+      center: [950000, 7600000],
+      zoom: 3.9,
+      extent: [-3500000, 3800000, 5000000, 11500000]
+    })
+
+    return view;
   }
 
   ngOnDestroy(): void {

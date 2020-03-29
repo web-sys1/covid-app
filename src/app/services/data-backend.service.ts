@@ -27,10 +27,9 @@ export class DataBackendService {
     }
 
     private fixMissingHistoricalNames(response: any) {
-        response.find(item => item.province == "faroe islands").country = "Faroe Islands";
+        response.find(item => item.country == "bosnia").country = "Bosnia and Herzegovina";
+        response.find(item => item.province == "faroe islands").country = "Faeroe Islands";
         response.find(item => item.province == "gibraltar").country = "Gibraltar";
-        response.find(item => item.country == "moldova").country = "Moldova, Republic of";
-        response.find(item => item.country == "north macedonia").country = "Macedonia, the former Yugoslav Republic of";
         response.find(item => item.province == "isle of man").country = "Isle of Man";
     }
 

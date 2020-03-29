@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { Feature } from 'ol';
 import { defaults as defaultControls } from 'ol/control';
 import { getCenter } from 'ol/extent';
+import { defaults as defaultInteractions } from 'ol/interaction';
+import Select from 'ol/interaction/Select';
 import VectorLayer from 'ol/layer/Vector';
 import Map from 'ol/Map';
 import VectorSource from 'ol/source/Vector';
@@ -24,6 +26,13 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   public map: Map;
   private subscription = new Subscription();
   private featuresWithData: Feature[];
+  private selectHandler = new Select({
+    style: new Style({
+      fill: new Fill({ color: '#606060' }),
+      stroke: new Stroke({ color: '#101010', width: 2 }),
+      zIndex: 2
+    })
+  });
 
   constructor(private dataService: DataService) { }
 
@@ -35,7 +44,12 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
     this.subscription.add(this.dataService.$featureClicked.subscribe((result) => {
       this.zoomToFeature(result);
+      this.handleSelectedFeature(result);
     }));
+
+    this.selectHandler.on('select', (selection) => {
+      this.zoomToFeature(selection.selected[0]);
+    });
   }
 
   zoomToFeature(feature) {
@@ -66,6 +80,16 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       fitView();
   }
 
+  private handleSelectedFeature(feat): void {
+    this.selectHandler.getFeatures().clear()
+    this.selectHandler.getFeatures().push(feat);
+    this.selectHandler.dispatchEvent({
+      type: 'select',
+      selected: [feat],
+      deselected: []
+    });
+  }
+
   private setMap() {
     const vectorLayer = this.getVectorLayer();
     const view = this.getViewForMap();
@@ -74,6 +98,9 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       target: 'map',
       layers: [vectorLayer],
       view: view,
+      interactions: defaultInteractions().extend([
+        this.selectHandler
+      ]),
       controls: defaultControls().extend([
         new AnimateToExtentControl()
       ]),

@@ -1,6 +1,6 @@
 # COVID-19 in Europe
 
-A Web Wpplication to visualize Coronavirus changes in Europe.
+A Web Application to visualize Coronavirus changes in Europe.
 
 ## Technologies and key libraries
 - Angular 9

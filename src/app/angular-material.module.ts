@@ -5,7 +5,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -47,7 +47,8 @@ import { MatTreeModule } from '@angular/material/tree';
         MatCardModule,
         MatTreeModule,
         MatExpansionModule,
-        ScrollingModule
+        ScrollingModule,
+        MatRippleModule
     ],
     exports: [
         MatButtonModule,
@@ -69,7 +70,8 @@ import { MatTreeModule } from '@angular/material/tree';
         MatCardModule,
         MatTreeModule,
         MatExpansionModule,
-        ScrollingModule
+        ScrollingModule,
+        MatRippleModule
     ],
     providers: [
         MatDatepickerModule,

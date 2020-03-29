@@ -2,14 +2,16 @@
     <form class="search-from">
         <mat-form-field class="search-bar-full-width">
             <mat-label>SEARCH...</mat-label>
-            <input matInput #countryInput autocomplete="off" spellcheck="false" (input)="filterCountries(countryInput.value)">
+            <input matInput #countryInput autocomplete="off" spellcheck="false"
+                (input)="filterCountries(countryInput.value)" (keypress)="selectFirstCountryOnEnter($event)">
         </mat-form-field>
     </form>
     <ngx-simplebar [options]="options" class="simplebar-layout">
         <mat-action-list>
-            <button mat-list-item class="country-node" *ngFor="let country of countries" (click)="animateToFeature(country)">
+            <mat-list-item matRipple class="country-node" *ngFor="let country of countries"
+                (click)="animateToFeature(country)">
                 {{country.getProperties()["name_long"]}}
-            </button>
+            </mat-list-item>
         </mat-action-list>
     </ngx-simplebar>
 </div>

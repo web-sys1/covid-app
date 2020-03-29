@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatRipple } from '@angular/material/core';
 import { Feature } from 'ol';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
@@ -10,6 +11,8 @@ import { DataService } from '../services/data.service';
 })
 export class CountriesListComponent implements OnInit, OnDestroy {
 
+  @ViewChild(MatRipple) firstCountryRippleElement: MatRipple;
+  
   private subscription: Subscription;
   private countriesSource: Feature[];
   public countries: Feature[];
@@ -31,10 +34,18 @@ export class CountriesListComponent implements OnInit, OnDestroy {
   }
 
   filterCountries(value: string) {
-    this.countries = this.countriesSource.filter(item => item.getProperties()["name"].toLowerCase().indexOf(value.toLowerCase()) > -1 )
+    this.countries = this.countriesSource.filter(item => item.getProperties()["name"].toLowerCase().indexOf(value.toLowerCase()) > -1);
   }
 
-  animateToFeature(feature: Feature) { 
+  selectFirstCountryOnEnter(event: KeyboardEvent) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      this.firstCountryRippleElement.launch({ centered: true });
+      this.animateToFeature(this.countries[0]);
+    }
+  }
+
+  animateToFeature(feature: Feature) {
     this.dataService.zoomAndPanToFeature(feature);
   }
 

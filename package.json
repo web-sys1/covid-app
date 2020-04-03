@@ -23,6 +23,7 @@
     "@angular/router": "~9.0.6",
     "@types/jest": "^25.1.4",
     "@types/mocha": "^7.0.2",
+    "geostats": "^1.8.0",
     "ngx-spinner": "^9.0.1",
     "ol": "^6.2.1",
     "ol-ext": "^3.1.0",

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import * as GeoStats from 'geostats';
 import { Feature } from 'ol';
 import { defaults as defaultControls } from 'ol/control';
 import { getCenter } from 'ol/extent';
@@ -12,29 +13,32 @@ import Stroke from 'ol/style/Stroke';
 import Style from 'ol/style/Style';
 import View from 'ol/View';
 import { Subscription } from 'rxjs';
+import { CountryCovidData } from '../models/countryCovidData.model';
 import { DataService } from '../services/data.service';
 import { AnimateToExtentControl } from './animateToExtent';
+import { JenksDataClassification } from './jenksBreaksClassification';
+import { PrettyBreaksRangesGenerator } from './prettyBrakesClassification';
 
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
+  providers: [PrettyBreaksRangesGenerator, JenksDataClassification]
 })
 export class MapComponent implements AfterViewInit, OnDestroy {
 
   public map: Map;
   private subscription = new Subscription();
+  private vectorSource: VectorSource;
   private featuresWithData: Feature[];
-  private selectHandler = new Select({
-    style: new Style({
-      fill: new Fill({ color: '#606060' }),
-      stroke: new Stroke({ color: '#101010', width: 2 }),
-      zIndex: 2
-    })
-  });
+  private colorBreaks: number[];
+  private selectHandler = new Select();
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,
+    // private prettyBreaksGenerator: PrettyBreaksRangesGenerator,
+    // private jenksBreaksGenerator: JenksDataClassification
+  ) { }
 
   ngAfterViewInit(): void {
     this.subscription.add(this.dataService.$featuresWithData.subscribe((result) => {
@@ -43,16 +47,39 @@ export class MapComponent implements AfterViewInit, OnDestroy {
     }));
 
     this.subscription.add(this.dataService.$featureClicked.subscribe((result) => {
-      this.zoomToFeature(result);
       this.handleSelectedFeature(result);
     }));
 
     this.selectHandler.on('select', (selection) => {
-      this.zoomToFeature(selection.selected[0]);
+      const selectedFeature = selection.selected[0];
+      if (selectedFeature) {
+        const selectedStyle = new Style({
+          fill: new Fill({ color: this.getColor(selectedFeature) }),
+          stroke: new Stroke({ width: 5, color: 'rgb(20, 20, 20)' }),
+          zIndex: 10
+        })
+        this.zoomToFeature(selectedFeature);
+        this.selectHandler.getFeatures().getArray()[0].setStyle(selectedStyle);
+      }
     });
   }
 
-  zoomToFeature(feature) {
+
+  // Change current classification method if neccessary:
+  // jenksBreaks - this.jenksBreaksGenerator.getJenksClassification(dataValues, 6);
+  // prettyBreaks - this.prettyBreaksGenerator.calculateRanges(dataValues, 6);
+  // quantileBreaks - geoStats.getClassQuantile(6)
+  // arithmeticBreaks - geoStats.getClassArithmeticProgression(6);
+
+  private getClassificationBreaks(dataValues: number[]): number[] {
+    const geoStats = new GeoStats();
+    geoStats.serie = dataValues;
+    const geometricBreaks = geoStats.getClassGeometricProgression(6);
+
+    return geometricBreaks;
+  }
+
+  zoomToFeature(feature): void {
     const currentView = this.map.getView();
     const featureGeometry = feature.getGeometry();
     const featureResolution = currentView.getResolutionForExtent(featureGeometry.getExtent())
@@ -80,6 +107,23 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       fitView();
   }
 
+  private getColor(feature: Feature): string {
+    const actualData = <CountryCovidData>feature.getProperties()["actualData"];
+
+    if (actualData.cases > this.colorBreaks[5])
+      return 'rgba(165,15,21,0.6)';
+    else if (actualData.cases > this.colorBreaks[4] && actualData.cases <= this.colorBreaks[5])
+      return 'rgba(222,45,38,0.6)';
+    else if (actualData.cases > this.colorBreaks[3] && actualData.cases <= this.colorBreaks[4])
+      return 'rgba(251,106,74,0.6)';
+    else if (actualData.cases > this.colorBreaks[2] && actualData.cases <= this.colorBreaks[3])
+      return 'rgba(252,146,114,0.6)';
+    else if (actualData.cases > this.colorBreaks[1] && actualData.cases <= this.colorBreaks[2])
+      return 'rgba(252,187,161,0.6)';
+    else if (actualData.cases <= this.colorBreaks[1])
+      return 'rgba(254,229,217,0.6)';
+  }
+
   private handleSelectedFeature(feat): void {
     this.selectHandler.getFeatures().clear()
     this.selectHandler.getFeatures().push(feat);
@@ -90,7 +134,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-  private setMap() {
+  private setMap(): void {
     const vectorLayer = this.getVectorLayer();
     const view = this.getViewForMap();
 
@@ -105,18 +149,19 @@ export class MapComponent implements AfterViewInit, OnDestroy {
         new AnimateToExtentControl()
       ]),
     });
-  }
 
+    this.colorPolygonsByValues();
+  }
 
   private getVectorLayer(): VectorLayer {
     const style = this.getStyleVectorFeatures()
-    const vectorSource = new VectorSource({
+    this.vectorSource = new VectorSource({
       overlaps: false,
       features: this.featuresWithData
     });
 
     const vectorLayer = new VectorLayer({
-      source: vectorSource,
+      source: this.vectorSource,
       style: style,
       updateWhileAnimating: true
     });
@@ -141,6 +186,15 @@ export class MapComponent implements AfterViewInit, OnDestroy {
     })
 
     return view;
+  }
+
+  private colorPolygonsByValues(): void {
+    const actualDataValues = Array.from(new Set(this.featuresWithData.map(item => item.getProperties()['actualData']?.cases)));
+    this.colorBreaks = this.getClassificationBreaks(actualDataValues);
+
+    this.vectorSource.forEachFeature(item => {
+      item.setStyle(new Style({ fill: new Fill({ color: this.getColor(item) }), stroke: new Stroke({ width: 1 }) }))
+    })
   }
 
   ngOnDestroy(): void {

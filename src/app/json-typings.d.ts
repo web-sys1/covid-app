@@ -4,3 +4,4 @@ declare module "*.json" {
 }
 
 declare var topojson: any;
+declare var geostats: any;

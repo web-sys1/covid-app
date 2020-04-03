@@ -27,10 +27,12 @@ export class DataBackendService {
     }
 
     private fixMissingHistoricalNames(response: any) {
-        response.find(item => item.country == "bosnia").country = "Bosnia and Herzegovina";
-        response.find(item => item.province == "faroe islands").country = "Faeroe Islands";
-        response.find(item => item.province == "gibraltar").country = "Gibraltar";
-        response.find(item => item.province == "isle of man").country = "Isle of Man";
+        // response.find(item => item.country?.toLowerCase() == "bosnia").country = "Bosnia and Herzegovina";
+        response.find(item => item.province?.toLowerCase() == "faroe islands").country = "Faroe Islands";
+        response.find(item => item.province?.toLowerCase() == "gibraltar").country = "Gibraltar";
+        response.find(item => item.province?.toLowerCase() == "isle of man").country = "Isle of Man";
+        // response.find(item => item.country?.toLowerCase() == "moldova, republic of").country = "Moldova";
+        // response.find(item => item.country?.toLowerCase() == "macedonia").country = "North Macedonia";
     }
 
     private getAdaptedHistoricalCovidData(response: any): CountryCovidDataWithTimeline[] {

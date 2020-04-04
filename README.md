@@ -1,6 +1,6 @@
-# COVID-19 in Europe
+# COVID-19 World Map
 
-A Web Application to visualize Coronavirus changes in Europe.
+A Web Application to visualize Coronavirus changes.
 
 ## Technologies and key libraries
 - Angular 9
@@ -9,13 +9,13 @@ A Web Application to visualize Coronavirus changes in Europe.
 - Openlayers 6
 
 ## Features
-- Interactive map for Europe with zoom/pan animations and filterable countries list
-- Actual COVID-19 data for all European countries `(in progress)`
-- Timeline showing all COVID-19 cases per day and daily COVID-19 cases per day from start of the virus in Europe `(in progress)`
-- COVID-19 data visualization on graphs `(in progress)`
+- Interactive World Map with zoom/pan animations and filterable countries list
+- Actual COVID-19 data for all countries `(in progress)`
+- Timeline showing all COVID-19 cases per day and daily COVID-19 cases per day from 28 Feb `(in progress)`
+- COVID-19 data visualization on charts `(in progress)`
 
 ## Data sources
-- Europe TopoJSON from https://geojson-maps.ash.ms/ edited in QGIS and simplified in MapShaper
+- World TopoJSON from https://geojson-maps.ash.ms/ edited in QGIS and simplified in MapShaper
 - COVID-19 data from NovelCovid API https://github.com/NovelCOVID/API 
 
 ## Author

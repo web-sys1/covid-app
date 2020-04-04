@@ -28,7 +28,8 @@ export class CountriesListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.dataService.$featuresWithData.subscribe((result) => {
-      this.countriesSource = result;
+      const countriesWithData = result.filter(item => item.getProperties()['actualData'] != null);
+      this.countriesSource = countriesWithData;
       this.countries = this.countriesSource.slice();
     })
   }

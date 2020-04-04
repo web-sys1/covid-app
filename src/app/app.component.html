@@ -1,24 +1,23 @@
-<mat-sidenav-container>
-  <ngx-spinner></ngx-spinner>
-  <div class="mat-grid-title noselect">
-    CORONAVIRUS (COVID-19) IN EUROPE
-  </div>
-  <mat-grid-list class="grid-list" cols="6" rowHeight="fit" gutterSize="20" (window:resize)="onResize($event)">
-    <mat-grid-tile class="countries-tile" [colspan]="countriesTileSize" rowspan="9">
-      <app-countries-list></app-countries-list>
-    </mat-grid-tile>
-    <mat-grid-tile class="map-tile" [colspan]="mapSize" rowspan="9">
-      <app-map></app-map>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="3">
-      graph 1
-    </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="3">
-      graph 2
-    </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="3">
-      graph 3
-    </mat-grid-tile>
-  </mat-grid-list>
+<ngx-spinner></ngx-spinner>
+<mat-toolbar class="header">
+  <img src="../assets/covid_ic.png" class="covid-icon" />
+  COVID-19 WORLD MAP</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav-panel">
+    <app-countries-list></app-countries-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-grid-list class="grid-list" cols="1" rowHeight="fit">
+      <mat-grid-tile class="map-tile" colspan="1" rowspan="7">
+        <app-map></app-map>
+      </mat-grid-tile>
+      <mat-grid-tile class="divider-tile" colspan="1" rowspan="1">
+        Divider
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="4">
+        Charts
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-sidenav-content>
 </mat-sidenav-container>
-<router-outlet></router-outlet>

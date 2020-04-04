@@ -18,7 +18,7 @@ export class AnimateToExtentControl extends Control {
     }
 
     click() {
-        this.getMap().getView().animate({ zoom: 3.9, center:[950000, 7600000], duration: 1000 })
+        this.getMap().getView().animate({ zoom: 0, center:[0, 50], duration: 1500 })
     }
 
 }

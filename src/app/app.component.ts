@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { CountryCovidData } from './models/countryCovidData.model';
-import { CountryCovidDataWithTimeline } from './models/countryCovidDataWithTimeline.model';
 import { DataService } from './services/data.service';
 
 
@@ -12,26 +10,15 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
 
-  public data = new Array<CountryCovidData>();
-  public timelineData = new Array<CountryCovidDataWithTimeline>();
-  public mapSize = 3;
-  public countriesTileSize = 1;
-
   constructor(private dataService: DataService, private spinner: NgxSpinnerService) {
-    this.dataService.$isLoading.subscribe((result) => {
-      result ? this.spinner.show() : this.spinner.hide();
+    this.spinner.show();
+    this.dataService.$dataLoaded.subscribe(() => {
+      this.spinner.hide();
     })
   }
 
   ngOnInit(): void {
     this.dataService.init();
-    this.mapSize = (window.innerWidth <= 1100) ? 4 : 3;
-    this.countriesTileSize = (window.innerWidth <= 1100) ? 2 : 1;
-  }
-
-  public onResize(event): void {
-    this.mapSize = (event.target.innerWidth <= 1100) ? 4 : 3;
-    this.countriesTileSize = (window.innerWidth <= 1100) ? 2 : 1;
   }
 
 }

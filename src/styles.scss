@@ -3,16 +3,6 @@ html, body {
   margin: 0;
 }
 
-mat-grid-tile {
-  background-color: var(--color-accent);
-  border-radius: 8px;
-}
-
-mat-sidenav-container {
-  height: 100vh;
-  background-color:#111111 !important;
-}
-
 .country-list {
   height: 100%;
   background: var(--color-accent) !important;
@@ -20,14 +10,6 @@ mat-sidenav-container {
   .mat-action-list {
     margin-bottom: 15px;
   }
-}
-
-.countries-tile {
-    background-color: transparent!important;
-    app-countries-list {
-        height: 100%!important;
-        width: 100%!important;
-    }
 }
 
 .map-tile {
@@ -38,7 +20,7 @@ mat-sidenav-container {
 }
 
 .simplebar-layout {
-  height: calc(100% - 65px);
+  height: calc(100% - 67px);
 }
 
 .mat-form-field-appearance-legacy {
@@ -64,7 +46,7 @@ mat-sidenav-container {
 }
 
 .ol-control {
-  background-color: var(--color-accent)!important;
+  background-color: #151515!important;
   &.ol-zoom {
     padding: 3px;
     .ol-zoom-in, .ol-zoom-out {

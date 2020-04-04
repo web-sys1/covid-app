@@ -7,6 +7,7 @@ import { defaults as defaultInteractions } from 'ol/interaction';
 import Select from 'ol/interaction/Select';
 import VectorLayer from 'ol/layer/Vector';
 import Map from 'ol/Map';
+import { get as getProjection } from 'ol/proj';
 import VectorSource from 'ol/source/Vector';
 import Fill from 'ol/style/Fill';
 import Stroke from 'ol/style/Stroke';
@@ -54,8 +55,9 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       const selectedFeature = selection.selected[0];
       if (selectedFeature) {
         const selectedStyle = new Style({
-          fill: new Fill({ color: this.getColor(selectedFeature) }),
-          stroke: new Stroke({ width: 5, color: 'rgb(20, 20, 20)' }),
+          fill: new Fill({ color: '#404040' }),
+          //yellow color for selected items stroke - testing
+          stroke: new Stroke({ width: 5, color: '#ffff00' }),
           zIndex: 10
         })
         this.zoomToFeature(selectedFeature);
@@ -85,12 +87,11 @@ export class MapComponent implements AfterViewInit, OnDestroy {
     const featureResolution = currentView.getResolutionForExtent(featureGeometry.getExtent())
     const viewResolution = currentView.getResolution();
     const featureCenter = getCenter(featureGeometry.getExtent());
-    const minFeatureResolution = 1400
+    const minFeatureResolution = 0.025
     let startingTimeout = 300;
 
     const fitView = () => this.map.getView().fit(featureGeometry, { padding: [50, 50, 50, 50], duration: 1000 });
-
-    if (currentView.getZoom() > 7 || featureResolution < 500) {
+    if ((currentView.getZoom() > 7 || featureResolution < 0.0002)) {
       if (featureResolution > minFeatureResolution)
         currentView.animate({ resolution: featureResolution, duration: 300 })
       else if (viewResolution < minFeatureResolution * 1.15)
@@ -109,19 +110,23 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
   private getColor(feature: Feature): string {
     const actualData = <CountryCovidData>feature.getProperties()["actualData"];
-
-    if (actualData.cases > this.colorBreaks[5])
-      return 'rgba(165,15,21,0.6)';
-    else if (actualData.cases > this.colorBreaks[4] && actualData.cases <= this.colorBreaks[5])
-      return 'rgba(222,45,38,0.6)';
-    else if (actualData.cases > this.colorBreaks[3] && actualData.cases <= this.colorBreaks[4])
-      return 'rgba(251,106,74,0.6)';
-    else if (actualData.cases > this.colorBreaks[2] && actualData.cases <= this.colorBreaks[3])
-      return 'rgba(252,146,114,0.6)';
-    else if (actualData.cases > this.colorBreaks[1] && actualData.cases <= this.colorBreaks[2])
-      return 'rgba(252,187,161,0.6)';
-    else if (actualData.cases <= this.colorBreaks[1])
-      return 'rgba(254,229,217,0.6)';
+    if (actualData) {
+      if (actualData.cases > this.colorBreaks[5])
+        return 'rgba(165,15,21,0.6)';
+      else if (actualData.cases > this.colorBreaks[4] && actualData.cases <= this.colorBreaks[5])
+        return 'rgba(222,45,38,0.6)';
+      else if (actualData.cases > this.colorBreaks[3] && actualData.cases <= this.colorBreaks[4])
+        return 'rgba(251,106,74,0.6)';
+      else if (actualData.cases > this.colorBreaks[2] && actualData.cases <= this.colorBreaks[3])
+        return 'rgba(252,146,114,0.6)';
+      else if (actualData.cases > this.colorBreaks[1] && actualData.cases <= this.colorBreaks[2])
+        return 'rgba(252,187,161,0.6)';
+      else if (actualData.cases <= this.colorBreaks[1])
+        return 'rgba(254,229,217,0.6)';
+    } else {
+      //yellow color for countries without data - testing
+      return '#ffff00'
+    }
   }
 
   private handleSelectedFeature(feat): void {
@@ -172,18 +177,24 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   private getStyleVectorFeatures(): Style {
     const style = new Style({
       fill: new Fill({ color: '#404040' }),
-      stroke: new Stroke({ color: '#202020', width: 1.5 })
+      stroke: new Stroke({ color: '#151515', width: 1.5 })
     });
 
     return style;
   }
 
   private getViewForMap(): View {
+    const projection = getProjection('EPSG:4326');
+    const projectionExtent = projection.getExtent();
+    const projectionCenter = [0, 50];
     const view = new View({
-      center: [950000, 7600000],
-      zoom: 3.9,
-      extent: [-3500000, 3800000, 5000000, 11500000]
-    })
+      projection: projection,
+      center: projectionCenter,
+      zoom: 0,
+      extent: projectionExtent,
+      multiWorld: false,
+      smoothExtentConstraint: false
+    });
 
     return view;
   }

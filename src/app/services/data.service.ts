@@ -42,24 +42,32 @@ export class DataService {
         })
     }
 
-    private generateFeaturesWithCovidData() {
+    private generateFeaturesWithCovidData(): void {
         const sourceFeatures = new TopoJSON().readFeatures(_dataFeatures);
         const vectorSource = new VectorSource({
             features: sourceFeatures
         });
+        const vectorFeatures = vectorSource.getFeatures();
 
+        const notFoundCountries: CountryCovidData[] = [];
         this.actualData.forEach(item => {
-            const foundFeatures = vectorSource.getFeaturesAtCoordinate([item?.countryInfo?.long, item?.countryInfo?.lat]);
-            if (foundFeatures && foundFeatures.length > 0) {
-                const feature = foundFeatures[0];
-                const foundTimelineData = this.timelineData.find(timeline => timeline?.country?.toLowerCase() == item?.country?.toLowerCase() || timeline?.province?.toLowerCase() == item?.country?.toLowerCase());
-                const featureProperties = feature.getProperties();
-                const featureId = Number.parseInt((<any>feature).ol_uid);
-                featureProperties["actualData"] = item;
-                featureProperties["timelineData"] = foundTimelineData;
-                feature.setProperties(featureProperties);
-                feature.setId(featureId);
-            }
+            let foundFeature = vectorFeatures.find(
+                feature => feature.getProperties()['iso_a3'] == item.countryInfo?.iso3
+                    || feature.getProperties()['gu_a3'] == item.countryInfo?.iso3
+                    || feature.getProperties()['name']?.toLowerCase() == item.country?.toLowerCase()
+                    || feature.getProperties()['name_long']?.toLowerCase() == item.country?.toLowerCase()
+            );
+
+            if (foundFeature)
+                this.assignCountryDataToFeature(item, foundFeature);
+            else
+                notFoundCountries.push(item);
+        });
+
+        notFoundCountries.forEach(item => {
+            const foundFeature = vectorSource.getFeaturesAtCoordinate([item.countryInfo?.long, item.countryInfo?.lat])[0];
+            if (foundFeature && !foundFeature.getProperties()['actualData'])
+                this.assignCountryDataToFeature(item, foundFeature, true);
         });
 
         const changedFeatures = vectorSource.getFeatures();
@@ -67,6 +75,24 @@ export class DataService {
 
         this.featuresWithData = changedFeatures;
         this.featuresWithDataSource.next(changedFeatures);
+    }
+
+    private assignCountryDataToFeature(countryItem: CountryCovidData, foundFeature: Feature, assignName: boolean = false) {
+        const featureProperties = foundFeature.getProperties();
+        const featureId = Number.parseInt((<any>foundFeature).ol_uid);
+        const foundTimelineData = this.timelineData.find(
+            timeline => timeline.country?.toLowerCase() == countryItem.country?.toLowerCase()
+                || timeline.province?.toLowerCase() == countryItem.country?.toLowerCase()
+        );
+        featureProperties['actualData'] = countryItem;
+        featureProperties['timelineData'] = foundTimelineData;
+        if (assignName) {
+            featureProperties['name'] = countryItem.country;
+            featureProperties['name_long'] = countryItem.country;
+            featureProperties['iso_a3'] = countryItem.countryInfo.iso3;
+        }
+        foundFeature.setProperties(featureProperties);
+        foundFeature.setId(featureId);
     }
 
     public zoomAndPanToFeature(feature: Feature) {

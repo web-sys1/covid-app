@@ -38,7 +38,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
   constructor(private dataService: DataService,
     // private prettyBreaksGenerator: PrettyBreaksRangesGenerator,
-    // private jenksBreaksGenerator: JenksDataClassification
+    private jenksBreaksGenerator: JenksDataClassification
   ) { }
 
   ngAfterViewInit(): void {
@@ -72,13 +72,14 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   // prettyBreaks - this.prettyBreaksGenerator.calculateRanges(dataValues, 6);
   // quantileBreaks - geoStats.getClassQuantile(6)
   // arithmeticBreaks - geoStats.getClassArithmeticProgression(6);
+  // geometricBreaks - geoStats.getClassGeometricProgression(6);
 
   private getClassificationBreaks(dataValues: number[]): number[] {
     const geoStats = new GeoStats();
     geoStats.serie = dataValues;
-    const geometricBreaks = geoStats.getClassGeometricProgression(6);
+    const jenksBreaks = this.jenksBreaksGenerator.getJenksClassification(dataValues, 6);
 
-    return geometricBreaks;
+    return jenksBreaks;
   }
 
   zoomToFeature(feature): void {
@@ -200,7 +201,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   }
 
   private colorPolygonsByValues(): void {
-    const actualDataValues = Array.from(new Set(this.featuresWithData.map(item => item.getProperties()['actualData']?.cases)));
+    const actualDataValues = Array.from(new Set(this.featuresWithData.map(item => item.getProperties()['actualData']?.cases).filter(item => item)));
     this.colorBreaks = this.getClassificationBreaks(actualDataValues);
 
     this.vectorSource.forEachFeature(item => {

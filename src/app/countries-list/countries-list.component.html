@@ -6,12 +6,12 @@
                 (input)="filterCountries(countryInput.value)" (keypress)="selectFirstCountryOnEnter($event)">
         </mat-form-field>
     </form>
-    <ngx-simplebar [options]="options" class="simplebar-layout">
+    <ng-scrollbar class="simplebar-layout">
         <mat-action-list>
             <mat-list-item matRipple class="country-node" *ngFor="let country of countries"
                 (click)="animateToFeature(country)">
                 {{country.getProperties()["name_long"]}}
             </mat-list-item>
         </mat-action-list>
-    </ngx-simplebar>
+    </ng-scrollbar>
 </div>

@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { AngularMaterialModule } from './angular-material.module';
@@ -11,7 +12,6 @@ import { CountriesListComponent } from './countries-list/countries-list.componen
 import { MapComponent } from './map/map.component';
 import { DataBackendService } from './services/data-backend.service';
 import { DataService } from './services/data.service';
-
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { DataService } from './services/data.service';
     AngularMaterialModule,
     HttpClientModule,
     SimplebarAngularModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgScrollbarModule
   ],
   providers: [DataService, DataBackendService],
   bootstrap: [AppComponent]

@@ -163,6 +163,8 @@ export class MapComponent implements AfterViewInit, OnDestroy {
     const style = this.getStyleVectorFeatures()
     this.vectorSource = new VectorSource({
       overlaps: false,
+      useSpatialIndex: false,
+      wrapX: false,
       features: this.featuresWithData
     });
 
